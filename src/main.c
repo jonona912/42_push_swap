@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:15:51 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 22:26:28 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/18 22:35:39 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,14 +103,17 @@ int	main(int argc, char *argv[])
 	// ft_print_lst(st_a, 'a');
 	ps_quick_sort(&st_a);
 	// ft_print_lst(st_a, '~');
+	// if (is_sorted(st_a, ASC))
+	// 	printf("sorted\n");
+	// else
+	// 	printf("not sorted\n");
 
-
-	int_lst *three = NULL;
+	// int_lst *three = NULL;
 	// int_lst *temp;
-	ps_lst_add_back(&three, ps_lstnew(3));
-	ps_lst_add_back(&three, ps_lstnew(2));
-	ps_lst_add_back(&three, ps_lstnew(1));
-	ps_lst_add_back(&three, ps_lstnew(0));
+	// ps_lst_add_back(&three, ps_lstnew(3));
+	// ps_lst_add_back(&three, ps_lstnew(2));
+	// ps_lst_add_back(&three, ps_lstnew(1));
+	// ps_lst_add_back(&three, ps_lstnew(0));
 	// printf("qs_is_sorted: %d\n", qs_is_sorted(three, DESC, 4));
 	// ft_print_lst(three, '1');
 	// temp  = sort_asc(three, 3);

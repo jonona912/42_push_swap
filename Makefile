@@ -37,7 +37,7 @@ LIBS = -L$(LIB_DIR) -lftprintf
 
 # Default rule to build the executable
 all: $(NAME)
-	./push_swap -3 -2 -1 3 2 1 9 4 33 192 39
+	./push_swap 11 10 9 8 7 6 5 4 3 2 1
 # ./push_swap 321 2 1 12 9 11 3 4 43 23 93 17 0
 # ./push_swap 321 2 1 12 9 -2147483648 9 22 21 20
 # Link object files to create the executable

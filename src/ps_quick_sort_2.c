@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:29:32 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 20:34:33 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/18 18:25:05 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	qs_find_median(int_lst *head, int len)
 	return (ret);
 }
 
-int_lst	*ps_merge(int_lst **lst_a, int_lst **lst_b, int len, char c)
+int_lst	*ps_merge(int_lst **lst_b, int_lst **lst_a, int len, char c)
 {
 	int	i;
 

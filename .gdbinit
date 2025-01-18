@@ -1,4 +1,4 @@
-break ps_quick_sort.c:203
+break ps_qs_helper
 
 define p_generic_list
   set var $n = $arg0
