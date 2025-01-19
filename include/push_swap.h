@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 03:06:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 20:41:42 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/18 23:52:48 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int_lst	*merge_lst(int_lst *first, int_lst *second);
 int_lst	*merge_sort_lst(int_lst *head);
 int		find_median(int_lst *head);
 int		ps_lst_len(int_lst *head);
-int_lst *sort_asc(int_lst *st_a, int len);
+// int_lst *sort_asc(int_lst *st_a, int len);
 
 // // quicksort - pt 1
 // int		lst_partition_a(int_lst **st_a, int len, int_lst **st_b);
@@ -106,5 +106,11 @@ int	qs_find_median(int_lst *head, int len);
 
 
 int	qs_is_sorted(int_lst *lst, t_sort sort, int len);
+
+// sort asc
+// int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
+int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
+
+
 #endif
 

@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 15:46:07 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 21:05:06 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/19 12:07:49 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ss(int_lst	**lst_a, int_lst **lst_b)
 		return (0);
 	swap_x(lst_a, 's', PRINT);
 	swap_x(lst_b, 'b', NOTPRINT);
-	return (0);
+	return (1);
 }
 
 int	rr(int_lst	**lst_a, int_lst **lst_b)

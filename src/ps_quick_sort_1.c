@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:03:41 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/18 21:20:22 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/19 13:24:51 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ int	lst_partition_b(int_lst **st_b, int_lst **st_a, int len)
 	{
 		if ((*st_b)->value > median)
 		{
-			push_x(st_b, st_a, 'b', PRINT);
+			push_x(st_b, st_a, 'a', PRINT);
 			len_a++;
 		}
 		else
-			rotate_x(st_b, 'a', PRINT);
+			rotate_x(st_b, 'b', PRINT);
 		i++;
 	}
 	len = len - len_a;
 	i = 0;
 	while (i < len)
 	{
-		rev_rotate_x(st_b, 'a', PRINT);
+		rev_rotate_x(st_b, 'b', PRINT);
 		i++;
 	}
 	return (len_a);
@@ -78,9 +78,13 @@ int_lst	*ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
 	int		len_b;
 	int_lst	*temp;
 
+	if (is_a == 1 && qs_is_sorted(*st_a, ASC, len))
+		return (*st_a);
+	else if (is_a == 0 && qs_is_sorted(*st_b, DESC, len))
+		return (*st_b);
 	if (len < 4 && is_a == 1)
 	{
-		temp = sort_asc(*st_a, len);
+		temp = sort_asc(st_a, st_b, len);
 		return (temp);
 	}
 	else if (len < 4)
@@ -120,12 +124,7 @@ int_lst	*ps_quick_sort(int_lst **st_a)
 	if (is_sorted(*st_a, ASC))
 		return (*st_a);
 	len = ps_lst_len(*st_a);
-	
-	// len_b = lst_partition_a(st_a, len, &st_b);
-	// len = len - len_b;
 	*st_a = ps_qs_helper(st_a, &st_b, len, 1);
-	// st_b = ps_qs_helper_b(&st_b, len_b, 0, st_a);
-	// ps_merge(st_a, &st_b, len_b, 'a');
 	return (*st_a);
 }
 
