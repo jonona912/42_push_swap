@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 03:06:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/18 23:52:48 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/21 21:02:59 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,11 @@ int_lst	*rev_rotate_x(int_lst **lst, char x, t_print status);
 int_lst	*rotate_x(int_lst **lst, char x, t_print status);
 int		push_x(int_lst **st_x, int_lst **st_y, char x, t_print status);
 int_lst	*swap_x(int_lst	**lst, char x, t_print status);
-int		ss(int_lst	**lst_a, int_lst **lst_b);
+// int		ss(int_lst	**lst_a, int_lst **lst_b);
+
+int	ss(int_lst	**lst_a, int_lst **lst_b, t_print status);
+int	rr(int_lst	**lst_a, int_lst **lst_b, t_print status);
+int	rrr(int_lst	**lst_a, int_lst **lst_b, t_print status);
 
 // merge sort
 int		copy_lst(int_lst **new_lst, int_lst *lst);
@@ -96,7 +100,7 @@ int		ps_lst_len(int_lst *head);
 // quicksort
 // int_lst	*ps_qs_split(int_lst **stack, int median, int len);
 int_lst	*ps_quick_sort(int_lst **st_a);
-int_lst	*sort_desc(int_lst *st_a, int len);
+// int_lst	*sort_desc(int_lst *st_a, int len);
 int_lst *ps_merge(int_lst **lst_a, int_lst **lst_b, int len, char c);
 
 int	qs_copy_lst(int_lst **new_lst, int_lst *lst, int len);
@@ -111,6 +115,6 @@ int	qs_is_sorted(int_lst *lst, t_sort sort, int len);
 // int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
 
-
+int_lst	*sort_desc(int_lst **st_a, int_lst **st_b, int len);
 #endif
 

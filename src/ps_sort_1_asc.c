@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 21:14:48 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/19 13:10:52 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/21 21:26:35 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	double_swapped(int_lst **st_a, int_lst **st_b)
 		b2 = (*st_b)->next->value;
 		if (a1 > a2 && b1 < b2);
 		{
-			ss(st_a, st_b);
+			ss(st_a, st_b, PRINT);
 			return (1);
 		}
 	}
@@ -94,27 +94,25 @@ int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b)
 	if (ft < sd && sd > td && ft > td) // 2 3 1
 	{
 		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_a, 'b', PRINT);
+		swap_x(st_a, 'a', PRINT);
 		push_x(st_b, st_a, 'a', PRINT);
 		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'b', PRINT);
+			swap_x(st_a, 'a', PRINT);
 	}
 	else if (ft > sd && sd > td) // 3 2 1 same operations as 1 2 3
 	{
+		if (!double_swapped(st_a, st_b))
+			swap_x(st_a, 'a', PRINT);
+		swap_x(st_a, 'a', PRINT);
 		push_x(st_a, st_b, 'b', PRINT);
-		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_b, 'b', PRINT);
-		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_b, 'b', PRINT);
+		swap_x(st_a, 'a', PRINT);
 		push_x(st_b, st_a, 'a', PRINT);
 		swap_x(st_b, 'b', PRINT);
-		push_x(st_b, st_a, 'a', PRINT);
-		push_x(st_b, st_a, 'a', PRINT);
 	}
 	else if (ft > sd && ft < td) // 2 1 3
 	{
 		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 's', PRINT);
+			swap_x(st_a, 'a', PRINT);
 	}
 	else if (ft > sd && ft > td && sd < td) // 3 1 2
 	{

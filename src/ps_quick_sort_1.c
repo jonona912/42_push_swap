@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:03:41 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/19 13:24:51 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:51:22 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ int	lst_partition_a(int_lst **st_a, int_lst **st_b, int len)
 
 int	lst_partition_b(int_lst **st_b, int_lst **st_a, int len)
 {
-	int		i;
-	int		len_a;
-	int		median;
+	int	i;
+	int	len_a;
+	int	median;
 
 	len_a = 0;
 	i = 0;
 	median = qs_find_median(*st_b, len);
 	while (i < len && *st_b)
 	{
-		if ((*st_b)->value > median)
+		if ((*st_b)->value >= median)
 		{
 			push_x(st_b, st_a, 'a', PRINT);
 			len_a++;
@@ -74,23 +74,26 @@ int	lst_partition_b(int_lst **st_b, int_lst **st_a, int len)
 
 int_lst	*ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
 {
+	static int	i = 0;
+
+	i++;
 	int		len_a;
 	int		len_b;
 	int_lst	*temp;
 
-	if (is_a == 1 && qs_is_sorted(*st_a, ASC, len))
-		return (*st_a);
-	else if (is_a == 0 && qs_is_sorted(*st_b, DESC, len))
-		return (*st_b);
+	// if (is_a == 1 && qs_is_sorted(*st_a, ASC, len))
+	// 	return (*st_a);
+	// else if (is_a == 0 && qs_is_sorted(*st_b, DESC, len))
+	// 	return (*st_b);
 	if (len < 4 && is_a == 1)
 	{
-		temp = sort_asc(st_a, st_b, len);
-		return (temp);
+		sort_asc(st_a, st_b, len);
+		return ;
 	}
 	else if (len < 4)
 	{
-		temp = sort_desc(*st_b, len);
-		return (temp);
+		sort_desc(st_a, st_b, len);
+		return ;
 	}
 	if (is_a == 1)
 	{
@@ -102,12 +105,12 @@ int_lst	*ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
 		len_a = lst_partition_b(st_b, st_a, len);
 		len_b = len - len_a;
 	}
-	*st_a = ps_qs_helper(st_a, st_b, len_a, 1);
-	*st_b = ps_qs_helper(st_a, st_b, len_b, 0);
-	if (is_a == 1)
-		return (ps_merge(st_b, st_a, len_b, 'a'));
-	else
-		return (ps_merge(st_a, st_b, len_a, 'b'));
+	ps_qs_helper(st_a, st_b, len_a, 1);
+	ps_qs_helper(st_a, st_b, len_b, 0);
+	// if (is_a == 1)
+	// 	return (ps_merge(st_b, st_a, len_b, 'a'));
+	// else
+	// 	return (ps_merge(st_a, st_b, len_a, 'b'));
 }
 
 int_lst	*ps_quick_sort(int_lst **st_a)
@@ -124,7 +127,7 @@ int_lst	*ps_quick_sort(int_lst **st_a)
 	if (is_sorted(*st_a, ASC))
 		return (*st_a);
 	len = ps_lst_len(*st_a);
-	*st_a = ps_qs_helper(st_a, &st_b, len, 1);
+	ps_qs_helper(st_a, &st_b, len, 1);
 	return (*st_a);
 }
 

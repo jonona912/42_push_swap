@@ -1,4 +1,6 @@
+break sort_desc
 break ps_qs_helper
+break ps_qs_helper if i == 8
 
 define p_generic_list
   set var $n = $arg0
