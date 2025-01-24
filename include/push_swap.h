@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 03:06:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/21 21:02:59 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/23 14:52:45 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,12 @@ int	qs_is_sorted(int_lst *lst, t_sort sort, int len);
 int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
 
 int_lst	*sort_desc(int_lst **st_a, int_lst **st_b, int len);
+
+
+// lst_sort checker
+int	convert_add_lst(char *str, int_lst **lst);
+void	create_lst_from_str(int_lst **lst, char *str);
+int_lst	*make_num_lst(char *argv[], int argc);
+
 #endif
 

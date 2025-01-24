@@ -6,12 +6,12 @@
 #    By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/22 13:12:18 by zkhojazo          #+#    #+#              #
-#    Updated: 2025/01/23 12:21:22 by zkhojazo         ###   ########.fr        #
+#    Updated: 2025/01/23 16:07:39 by zkhojazo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fPIC
 NAME = libgnl.a
 
 SRCS = get_next_line.c \
@@ -21,9 +21,8 @@ OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
-%.o: %.c ft_printf.h
+%.o: %.c get_next_line.h
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
-
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
@@ -38,3 +37,5 @@ re: fclean
 	$(MAKE) all
 
 .PHONY: clean fclean re
+
+# gcc *.c $(find ../src -maxdepth 1 -name "*.c" ! -name "main.c") -o output_executable -L ../ft_printf -lftprintf -L ./gnl -lgnl

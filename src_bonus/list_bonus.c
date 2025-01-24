@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists_2.c                                          :+:      :+:    :+:   */
+/*   list_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/31 16:15:26 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 12:43:47 by zkhojazo         ###   ########.fr       */
+/*   Created: 2025/01/23 14:57:46 by zkhojazo          #+#    #+#             */
+/*   Updated: 2025/01/23 14:58:08 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap_bonus.h"
 
-int	ft_isint(char *str)
+int	lst_compare(int_lst	*lst_a, int_lst *lst_b)
 {
-	if (*str == '+' || *str == '-')
-		str++;
-	while (*str)
+	while (lst_a && lst_b)
 	{
-		if (!ft_isdigit(*str))
+		if (lst_a->value != lst_b->value)
 			return (0);
-		str++;
+		lst_a = lst_a->next;
+		lst_b = lst_b->next;
 	}
-	return (1);
-}
-
-int	ps_lst_len(int_lst *head)
-{
-	int	i;
-
-	i = 0;
-	while (head)
-	{
-		i++;
-		head = head->next;
-	}
-	return (i);
+	if (lst_a == lst_b)
+		return (1);
+	return (0);
 }

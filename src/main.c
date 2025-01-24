@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:15:51 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/21 21:34:00 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:29:01 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,62 +26,15 @@ void	ft_print_lst(int_lst *lst, char c)
 	printf("--------------------------------------\n");
 }
 
-int	convert_add_lst(char *str, int_lst **lst)
-{
-	int		stack_num;
-
-	stack_num = ft_atoi(str);
-	ps_lst_add_back(lst, ps_lstnew(stack_num));
-	return (1);
-}
-
-void	create_lst_from_str(int_lst **lst, char *str)
-{
-	char	**str_arr;
-	int		i;
-
-	str_arr = ft_split(str, ' ');
-	i = 0;
-	while (*(str_arr + i))
-	{
-		convert_add_lst(*(str_arr + i), lst);
-		i++;
-	}
-	
-}
-
-int_lst	*make_num_lst(char *argv[], int argc)
-{
-	int_lst	*st_a;
-	int		stack_num;
-	int		i;
-
-	st_a = NULL;
-	i = 1;
-	while (i < argc)
-	{
-		if (contains_space(argv[i]))
-		{
-			create_lst_from_str(&st_a, argv[i]);
-		}
-		else
-			convert_add_lst(argv[i], &st_a);
-		// stack_num = ft_atoi(argv[i]);
-		// ps_lst_add_back(&st_a, ps_lstnew(stack_num));
-		i++;
-	}
-	return (st_a);
-}
-
 int	main(int argc, char *argv[])
 {
 	int_lst	*st_a;
-	int_lst *st_b;
+	// int_lst *st_b;
 	// int_lst *new_lst;
 	// int		median;
 
 	// new_lst = NULL;
-	st_b = NULL;
+	// st_b = NULL;
 	if (argc < 2)
 		return (0);
 	argv_valid(argv, argc);
@@ -106,8 +59,8 @@ int	main(int argc, char *argv[])
 	// 	printf("sorted\n");
 	// else
 	// 	printf("not sorted\n");
-
-	// int_lst *three = NULL;
+	
+	// // int_lst *three = NULL;
 	// int_lst *temp;
 	// ps_lst_add_back(&three, ps_lstnew(3));
 	// ps_lst_add_back(&three, ps_lstnew(2));

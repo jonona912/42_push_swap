@@ -1,4 +1,5 @@
-break ps_qs_helper if i == 19
+break perform_operands
+break perform_operations_bonus.c:116 if i == 60
 
 define p_generic_list
   set var $n = $arg0

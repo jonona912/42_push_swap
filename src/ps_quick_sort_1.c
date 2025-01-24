@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:03:41 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/20 16:51:22 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:31:27 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,23 @@ int_lst	*ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
 	int		len_b;
 	int_lst	*temp;
 
-	// if (is_a == 1 && qs_is_sorted(*st_a, ASC, len))
-	// 	return (*st_a);
-	// else if (is_a == 0 && qs_is_sorted(*st_b, DESC, len))
-	// 	return (*st_b);
+	if (is_a == 1 && qs_is_sorted(*st_a, ASC, len))
+		return (*st_a);
+	else if (is_a == 0 && qs_is_sorted(*st_b, DESC, len))
+	{
+		while (len--)
+			push_x(st_b, st_a, 'a', PRINT);
+		return (*st_b);
+	}
 	if (len < 4 && is_a == 1)
 	{
 		sort_asc(st_a, st_b, len);
-		return ;
+		return (*st_a);
 	}
 	else if (len < 4)
 	{
 		sort_desc(st_a, st_b, len);
-		return ;
+		return (*st_b);
 	}
 	if (is_a == 1)
 	{

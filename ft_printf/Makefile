@@ -6,14 +6,14 @@
 #    By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/28 17:51:53 by zkhojazo          #+#    #+#              #
-#    Updated: 2024/12/02 20:01:03 by zkhojazo         ###   ########.fr        #
+#    Updated: 2025/01/23 15:13:50 by zkhojazo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIBFTNAME = libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fPIC
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 

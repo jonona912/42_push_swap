@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 18:57:14 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/21 21:27:31 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:01:42 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b)
 	}
 	else if (ft < sd && ft < td && sd > td) // 1 3 2
 	{
-		rotate_x(&st_b, 'b', PRINT);
+		rotate_x(st_b, 'b', PRINT);
 		push_x(st_b, st_a, 'a', PRINT);
 		push_x(st_b, st_a, 'a', PRINT);
 		push_x(st_b, st_a, 'a', PRINT);

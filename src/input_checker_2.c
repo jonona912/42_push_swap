@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:54:23 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 20:59:33 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/23 22:21:56 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	is_sorted(int_lst *lst, t_sort sort)
 	while (lst->next)
 	{
 		if ((lst->value > lst->next->value) && sort == ASC)
+		{
 			return (0);
+		}
 		else if ((lst->value < lst->next->value) && sort == DESC)
 			return (0);
 		lst = lst->next;

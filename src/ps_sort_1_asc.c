@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 21:14:48 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/21 21:26:35 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/24 11:24:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	double_swapped(int_lst **st_a, int_lst **st_b)
 		a2 = (*st_a)->next->value;
 		b1 = (*st_b)->value;
 		b2 = (*st_b)->next->value;
-		if (a1 > a2 && b1 < b2);
+		if ((a1 > a2) && (b1 < b2));
 		{
 			ss(st_a, st_b, PRINT);
 			return (1);
@@ -103,7 +103,6 @@ int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b)
 	{
 		if (!double_swapped(st_a, st_b))
 			swap_x(st_a, 'a', PRINT);
-		swap_x(st_a, 'a', PRINT);
 		push_x(st_a, st_b, 'b', PRINT);
 		swap_x(st_a, 'a', PRINT);
 		push_x(st_b, st_a, 'a', PRINT);

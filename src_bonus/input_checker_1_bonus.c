@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:36:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 12:34:54 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/23 13:19:31 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,42 @@ int	argv_valid_bonus(char *argv[], int argc)
 	return (1);
 }
 
-int	ft_is_dublicate(int_lst **st_a)
+int	check_str_bonus(char *str)
 {
-	int_lst	*dublicate;
-	int_lst	*lst;
+	char	**str_arr;
 
-	lst = *st_a;
-	while (lst->next)
+	str_arr = ft_split(str, ' ');
+	if (!str_arr)
+		return (-1);
+	while (!*str_arr)
 	{
-		dublicate = lst->next;
-		while (dublicate)
-		{
-			if (lst->value == dublicate->value)
-			{
-				ps_lst_clear(st_a);
-				print_error(3);
-			}
-			dublicate = dublicate->next;
-		}
-		lst = lst->next;
+		if (!ft_isint(*str_arr))
+			return (0);
+		check_int_range_bonus(*str_arr);
+		str_arr++;
 	}
-	return (0);
+	return (1);
 }
+
+// int	ft_is_dublicate(int_lst **st_a)
+// {
+// 	int_lst	*dublicate;
+// 	int_lst	*lst;
+
+// 	lst = *st_a;
+// 	while (lst->next)
+// 	{
+// 		dublicate = lst->next;
+// 		while (dublicate)
+// 		{
+// 			if (lst->value == dublicate->value)
+// 			{
+// 				ps_lst_clear(st_a);
+// 				print_error(3);
+// 			}
+// 			dublicate = dublicate->next;
+// 		}
+// 		lst = lst->next;
+// 	}
+// 	return (0);
+// }

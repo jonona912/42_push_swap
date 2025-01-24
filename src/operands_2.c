@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 15:46:07 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/21 16:55:33 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/23 22:45:05 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	ss(int_lst	**lst_a, int_lst **lst_b, t_print status)
 	if (!lst_a || !lst_b || !*lst_a
 		|| !*lst_b || !(*lst_a)->next || !(*lst_b)->next)
 		return (0);
-	if (status)
-		swap_x(lst_a, 's', NOTPRINT);
-	else
+	if (status == PRINT)
 		swap_x(lst_a, 's', PRINT);
+	else
+		swap_x(lst_a, 's', NOTPRINT);
 	swap_x(lst_b, 'b', NOTPRINT);
 	return (1);
 }
