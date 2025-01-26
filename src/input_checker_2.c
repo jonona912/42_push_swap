@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:54:23 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 22:21:56 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:23:13 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_str(char *str)
 	str_arr = ft_split(str, ' ');
 	if (!str_arr)
 		return (-1);
-	while (!*str_arr)
+	while (*str_arr)
 	{
 		if (!ft_isint(*str_arr))
 			print_error(1);

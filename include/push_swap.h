@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 03:06:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 14:52:45 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 13:39:14 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ typedef struct i_list {
 	int				value;
 	struct i_list	*next;
 } int_lst;
+
+typedef struct s_stack
+{
+	int	a;
+	int	rotate_a;
+	int	rotate_b;
+} t_stack;
 
 typedef enum s_print
 {
@@ -81,7 +88,8 @@ int_lst	*merge_sort_lst(int_lst *head);
 int		find_median(int_lst *head);
 int		ps_lst_len(int_lst *head);
 // int_lst *sort_asc(int_lst *st_a, int len);
-
+int	set_nums(int_lst *lst, int len, int *sd, int *td);
+int	is_stack_b_rot(int_lst *lst);
 // // quicksort - pt 1
 // int		lst_partition_a(int_lst **st_a, int len, int_lst **st_b);
 // int		lst_partition_b(int_lst **st_b, int len, int_lst **st_a);

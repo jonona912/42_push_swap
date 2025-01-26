@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:16 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 20:57:32 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 14:52:01 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int	check_int_range(char *str)
 
 	stack_num = ft_atoi(str);
 	stack_str = ft_itoa(stack_num);
+	if (*str == '0')
+		str++;
+	else if (*str == '+')
+		str++;
 	if (ft_strcmp(stack_str, str))
 		print_error(2);
 	free(stack_str);

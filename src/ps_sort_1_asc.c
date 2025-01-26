@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 21:14:48 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/24 11:24:32 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 14:29:02 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	double_swapped(int_lst **st_a, int_lst **st_b)
 		a2 = (*st_a)->next->value;
 		b1 = (*st_b)->value;
 		b2 = (*st_b)->next->value;
-		if ((a1 > a2) && (b1 < b2));
+		if ((a1 > a2) && (b1 < b2))
 		{
 			ss(st_a, st_b, PRINT);
 			return (1);
@@ -52,37 +52,90 @@ int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len)
 	return (1);
 }
 
-int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b)
+
+
+int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len)
 {
 	int		ft;
 	int		sd;
 	int		td;
 
-	ft = (*st_a)->value;
-	sd = (*st_a)->next->value;
-	td = (*st_a)->next->next->value;
-	if (ft < sd && sd > td && ft > td) // 2 3 1
-		rev_rotate_x(st_a, 'a', PRINT);
-	else if (ft > sd && sd > td) // 3 2 1 same operations as 1 2 3
+	ft = set_nums(*st_a, len, &sd, &td);
+	while (!(ft < sd && sd < td))
 	{
-		rotate_x(st_a, 'a', PRINT);
-		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'a', PRINT);
+		if (ft < sd && sd > td && ft > td)
+		{
+			if (is_stack_b_rot(*st_b))
+				rrr(st_a, st_b, PRINT);
+			else
+				rev_rotate_x(st_a, 'a', PRINT);
+		}
+		else if (ft > sd && ft > td)
+		{
+			if (is_stack_b_rot(*st_b))
+				rr(st_a, st_b, PRINT);
+			else
+				rotate_x(st_a, 'a', PRINT);
+		}
+		else if ((ft < sd && ft < td) || (ft > sd && ft < td))
+		{
+			if (!double_swapped(st_a, st_b))
+				swap_x(st_a, 'a', PRINT);
+		}
+		ft = set_nums(*st_a, len, &sd, &td);
 	}
-	else if (ft > sd && ft < td) // 2 1 3
-		return (swap_x(st_a, 's', PRINT));
-	else if (ft > sd && ft > td && sd < td) // 3 1 2
-		rotate_x(st_a, 'a', PRINT);
-	else if (ft < sd && ft < td && sd > td) // 1 3 2
-	{
-		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'a', PRINT);
-		rotate_x(st_a, 'a', PRINT);
-	}
-	return (*st_a);
 }
 
-int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b)
+
+// int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
+// {
+// 	int		ft;
+// 	int		sd;
+// 	int		td;
+
+// 	ft = (*st_a)->value;
+// 	sd = (*st_a)->next->value;
+// 	td = (*st_a)->next->next->value;
+// 	if (ft < sd && sd > td && ft > td) // 2 3 1
+// 	{
+// 		push_x(st_a, st_b, 'b', PRINT);
+// 		swap_x(st_a, 'a', PRINT);
+// 		push_x(st_b, st_a, 'a', PRINT);
+// 		if (!double_swapped(st_a, st_b))
+// 			swap_x(st_a, 'a', PRINT);
+// 	}
+// 	else if (ft > sd && sd > td) // 3 2 1 same operations as 1 2 3
+// 	{
+// 		if (!double_swapped(st_a, st_b))
+// 			swap_x(st_a, 'a', PRINT);
+// 		push_x(st_a, st_b, 'b', PRINT);
+// 		swap_x(st_a, 'a', PRINT);
+// 		push_x(st_b, st_a, 'a', PRINT);
+// 		swap_x(st_a, 'a', PRINT);
+// 	}
+// 	else if (ft > sd && ft < td) // 2 1 3
+// 	{
+// 		if (!double_swapped(st_a, st_b))
+// 			swap_x(st_a, 'a', PRINT);
+// 	}
+// 	else if (ft > sd && ft > td && sd < td) // 3 1 2
+// 	{
+// 		if (!double_swapped(st_a, st_b))
+// 			swap_x(st_a, 'a', PRINT);
+// 		push_x(st_a, st_b, 'b', PRINT);
+// 		swap_x(st_a, 'a', PRINT);
+// 		push_x(st_b, st_a, 'a', PRINT);
+// 	}
+// 	else if (ft < sd && ft < td && sd > td) // 1 3 2
+// 	{
+// 		push_x(st_a, st_b, 'b', PRINT);
+// 		swap_x(st_a, 'a', PRINT);
+// 		push_x(st_b, st_a, 'a', PRINT);
+// 	}
+// 	return (*st_a);
+// }
+
+int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
 {
 	int		ft;
 	int		sd;
@@ -91,41 +144,26 @@ int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b)
 	ft = (*st_a)->value;
 	sd = (*st_a)->next->value;
 	td = (*st_a)->next->next->value;
-	if (ft < sd && sd > td && ft > td) // 2 3 1
+	while (len != 3 || !(ft < sd && sd < td))
 	{
-		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_a, 'a', PRINT);
-		push_x(st_b, st_a, 'a', PRINT);
-		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'a', PRINT);
-	}
-	else if (ft > sd && sd > td) // 3 2 1 same operations as 1 2 3
-	{
-		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'a', PRINT);
-		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_a, 'a', PRINT);
-		push_x(st_b, st_a, 'a', PRINT);
-		swap_x(st_b, 'b', PRINT);
-	}
-	else if (ft > sd && ft < td) // 2 1 3
-	{
-		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'a', PRINT);
-	}
-	else if (ft > sd && ft > td && sd < td) // 3 1 2
-	{
-		if (!double_swapped(st_a, st_b))
-			swap_x(st_a, 'a', PRINT);
-		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_a, 'a', PRINT);
-		push_x(st_b, st_a, 'a', PRINT);
-	}
-	else if (ft < sd && ft < td && sd > td) // 1 3 2
-	{
-		push_x(st_a, st_b, 'b', PRINT);
-		swap_x(st_a, 'a', PRINT);
-		push_x(st_b, st_a, 'a', PRINT);
+		if (ft > sd)
+		{
+			if (!double_swapped(st_a, st_b))
+				swap_x(st_a, 'a', PRINT);
+		}
+		else if (len == 3 && ft < sd)
+		{
+			push_x(st_a, st_b, 'b', PRINT);
+			len--;
+		}
+		else if (len == 2)
+		{
+			push_x(st_b, st_a, 'a', PRINT);
+			len++;
+		}
+		ft = (*st_a)->value;
+		sd = (*st_a)->next->value;
+		td = (*st_a)->next->next->value;
 	}
 	return (*st_a);
 }
@@ -141,9 +179,9 @@ int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len)
 	lst_len = ps_lst_len(*st_a);
 	if (lst_len == 3)
 	{
-		sort_3_null_asc(st_a, st_b);
+		sort_3_null_asc(st_a, st_b, len);
 		return (*st_a);
 	}
 	else
-		return (sort_3_asc(st_a, st_b));
+		return (sort_3_asc(st_a, st_b, len));
 }

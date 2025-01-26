@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:15:51 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/24 12:29:01 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:28:50 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ int	main(int argc, char *argv[])
 	// printf("median: %d\n", find_media9+(st_a));
 	// ft_print_lst(st_a, 'a');
 	ps_quick_sort(&st_a);
-	// ft_print_lst(st_a, '~');
-	// if (is_sorted(st_a, ASC))
-	// 	printf("sorted\n");
-	// else
-	// 	printf("not sorted\n");
-	
+	ft_print_lst(st_a, '~');
+	if (is_sorted(st_a, ASC))
+		printf("sorted\n");
+	else
+		printf("not sorted\n");
+
 	// // int_lst *three = NULL;
 	// int_lst *temp;
 	// ps_lst_add_back(&three, ps_lstnew(3));
@@ -128,7 +128,6 @@ int	main(int argc, char *argv[])
 	// ft_print_lst(half2, 'b');
 	
 
-	ps_lst_clear(&st_a);
 	ps_lst_clear(&st_a);
 	return (0);
 }

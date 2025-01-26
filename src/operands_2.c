@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 15:46:07 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 22:45:05 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/25 22:07:10 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	rr(int_lst	**lst_a, int_lst **lst_b, t_print status)
 	if (!lst_a || !lst_b || !*lst_a
 		|| !*lst_b || !(*lst_a)->next || !(*lst_b)->next)
 		return (0);
-	if (status)
-		rotate_x(lst_a, 'r', NOTPRINT);
-	else
+	if (status == PRINT)
 		rotate_x(lst_a, 'r', PRINT);
+	else
+		rotate_x(lst_a, 'r', NOTPRINT);
 	rotate_x(lst_b, 'b', NOTPRINT);
 	return (1);
 }
@@ -43,10 +43,10 @@ int	rrr(int_lst	**lst_a, int_lst **lst_b, t_print status)
 	if (!lst_a || !lst_b || !*lst_a
 		|| !*lst_b || !(*lst_a)->next || !(*lst_b)->next)
 		return (0);
-	if (status)
-		rev_rotate_x(lst_a, 'r', NOTPRINT);
-	else
+	if (status == PRINT)
 		rev_rotate_x(lst_a, 'r', PRINT);
+	else
+		rev_rotate_x(lst_a, 'r', NOTPRINT);
 	rev_rotate_x(lst_b, 'b', NOTPRINT);
 	return (1);
 }
