@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:59:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 21:01:26 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:09:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	copy_lst(int_lst **new_lst, int_lst *lst)
 	return (1);
 }
 
-int	copy_values(int_lst	**sorted, int_lst **cp1)//, int_lst **cp2)
+int	copy_values(int_lst	**sorted, int_lst **cp1)
 {
 	int_lst	*node1;
 

@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:29:32 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/18 23:06:33 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:01:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,18 @@ int_lst	*ps_merge(int_lst **lst_b, int_lst **lst_a, int len, char c)
 		i++;
 	}
 	return (*lst_a);
+}
+
+int	is_stack_b_rot(int_lst *lst)
+{
+	int	first;
+	int_lst	*last_nd;
+
+	if (!lst || !lst->next)
+		return (0);
+	first = lst->value;
+	last_nd = ps_lst_last(lst);
+	if (first < last_nd->value)
+		return (1);
+	return (0);
 }

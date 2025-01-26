@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:25:52 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 13:26:11 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 19:55:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	create_lst_from_str(int_lst **lst, char *str)
 		convert_add_lst(*(str_arr + i), lst);
 		i++;
 	}
-	
 }
 
 int_lst	*make_num_lst(char *argv[], int argc)

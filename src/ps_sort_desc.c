@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_sort_2_desc.c                                   :+:      :+:    :+:   */
+/*   ps_sort_desc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 18:57:14 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 13:36:01 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 20:16:06 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,8 @@ int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len)
 
 int_lst	*sort_desc(int_lst **st_a, int_lst **st_b, int len)
 {
-	// int_lst	*st_a;
 	int		lst_len;
 
-	// st_a = NULL;
 	if (!sort_needed_desc(st_a, st_b, len))
 		return (*st_b);
 	lst_len = ps_lst_len(*st_b);

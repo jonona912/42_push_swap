@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_sort_checker.c                                 :+:      :+:    :+:   */
+/*   ps_quick_sort_helper_2.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 21:11:04 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 21:12:33 by zkhojazo         ###   ########.fr       */
+/*   Created: 2025/01/26 22:25:57 by zkhojazo          #+#    #+#             */
+/*   Updated: 2025/01/26 22:29:26 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	qs_is_sorted(int_lst *lst, t_sort sort, int len)
+void	sort_both_stacks(int_lst **st_a, int_lst **st_b, int len, int is_a)
 {
-	int	i;
-
-	i = 1;
-	if (!lst)
-		return (1);
-	while (i < len && lst->next)
+	if (len < 4 && is_a == 1)
 	{
-		if ((lst->value > lst->next->value) && sort == ASC)
-			return (0);
-		else if ((lst->value < lst->next->value) && sort == DESC)
-			return (0);
-		lst = lst->next;
-		i++;
+		sort_asc(st_a, st_b, len);
+		return ;
 	}
-	return (1);
+	else if (len < 4)
+	{
+		sort_desc(st_a, st_b, len);
+		return ;
+	}
+}
+
+void	ps_set_part_len(int len, int is_a, int *len_a, int *len_b)
+{
+	if (is_a == 1)
+		*len_a = len - *len_b;
+	else
+		*len_b = len - *len_a;
 }

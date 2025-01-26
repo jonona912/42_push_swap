@@ -31,7 +31,7 @@
 
 # Compiler and flags
 CC = gcc
-CFLAGS = -g #-Wall -Wextra -Werror
+CFLAGS = -g #-fsanitize=address #-Wall -Wextra -Werror
 
 # Directories
 SRC_DIR = src
@@ -43,17 +43,19 @@ SRCS = input_checker_1.c \
 		input_checker_2.c \
 		lists_1.c \
 		lists_2.c \
-		lst_sort_checker.c \
-		main.c \
 		main_helper.c \
+		main.c \
 		merge_sort_lst_1.c \
 		merge_sort_lst_2.c \
 		operands_1.c \
 		operands_2.c \
+		ps_qs_partition_a.c \
 		ps_quick_sort_1.c \
 		ps_quick_sort_2.c \
-		ps_sort_1_asc.c \
-		ps_sort_2_desc.c
+		ps_quick_sort_helper.c \
+		ps_quick_sort_helper_2.c \
+		ps_sort_asc.c \
+		ps_sort_desc.c
 
 # Add full paths for source files
 SRC_FILES = $(addprefix $(SRC_DIR)/, $(SRCS))

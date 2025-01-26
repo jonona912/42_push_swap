@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 03:06:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 13:39:14 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/26 22:55:19 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,98 +38,101 @@ typedef enum s_sort
 	DESC
 } t_sort;
 
-int		ft_isint(char *str);
-int_lst	*ps_lstnew(int	val);
+// input checker - 1
+int	check_int_range(char *str);
+int	argv_valid(char *argv[], int argc);
+int	ft_is_dublicate(int_lst **st_a);
+
+// input checker - 2
+int	is_sorted(int_lst *lst, t_sort sort);
+void	print_error(int n);
+int	contains_space(char *str);
+int	check_str(char *str);
+int	free_double_arr(char **str);
+
+// lists_1.c
+int_lst	*ps_lstnew(int val);
 int_lst	*ps_lst_last(int_lst *lst);
-void	ps_lst_clear(int_lst **lst);
 void	ps_lst_add_back(int_lst **lst, int_lst *new);
 void	ps_lst_add_front(int_lst **lst, int_lst *new);
+void	ps_lst_clear(int_lst **lst);
 
-// int_lst	*ft_lst_sort(int_lst **st_a, int_lst **st_b, int len);
-// void	ft_push(int_lst **st_a, int_lst **st_b, char *px);
-// int_lst *ft_ra(int_lst **st1);
-// int_lst	*ft_rra(int_lst *st1);
+// lists_2.c
+int	ft_isint(char *str);
+int	ps_lst_len(int_lst *head);
+int	qs_is_sorted(int_lst *lst, t_sort sort, int len);
 
-// check Validity
-int		is_sorted(int_lst *lst, t_sort sort);
-int		argv_valid(char *argv[], int argc);
-int		ft_is_dublicate(int_lst **st_a);
-void	print_error(int n);
-int		contains_space(char *str);
-int		check_str(char *str);
-int		check_int_range(char *str);
+// main_helper.c
+int	convert_add_lst(char *str, int_lst **lst);
+void	create_lst_from_str(int_lst **lst, char *str);
+int_lst	*make_num_lst(char *argv[], int argc);
 
-// operands
+// merge_sort_lst_1.c
+int	divide_list(int_lst **lst, int_lst **half2, int mid);
+int	copy_lst(int_lst **new_lst, int_lst *lst);
+int	copy_values(int_lst	**sorted, int_lst **cp1);
+int	ft_merge(int_lst **half1, int_lst **half2);
+
+// merge_sort_lst_2.c
+int_lst	*split_lst(int_lst *head);
+int_lst	*merge_lst(int_lst *first, int_lst *second);
+int_lst	*merge_sort_lst(int_lst *head);
+int	find_median(int_lst *head);
+
+// operands_1.c
 int_lst	*find_penultimate(int_lst *lst);
 int_lst	*rev_rotate_x(int_lst **lst, char x, t_print status);
 int_lst	*rotate_x(int_lst **lst, char x, t_print status);
-int		push_x(int_lst **st_x, int_lst **st_y, char x, t_print status);
+int	push_x(int_lst **st_x, int_lst **st_y, char x, t_print status);
 int_lst	*swap_x(int_lst	**lst, char x, t_print status);
-// int		ss(int_lst	**lst_a, int_lst **lst_b);
 
+// operands_2.c
 int	ss(int_lst	**lst_a, int_lst **lst_b, t_print status);
 int	rr(int_lst	**lst_a, int_lst **lst_b, t_print status);
 int	rrr(int_lst	**lst_a, int_lst **lst_b, t_print status);
 
-// merge sort
-int		copy_lst(int_lst **new_lst, int_lst *lst);
-// void	merge_sort_lst(int_lst **lst, int len);
-int		divide_list(int_lst **lst, int_lst **half2, int mid);
-int		copy_values(int_lst	**sorted, int_lst **cp1);
-int		ft_merge(int_lst **half1, int_lst **half2);
+// ps_qs_partition_a.c
+int	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates);
+int	lst_part_a_helper(int_lst **st_a, int_lst **st_b, int len, int *len_b);
+int	lst_partition_a(int_lst **st_a, int_lst **st_b, int len);
 
-// merge sort new
-int_lst	*split_lst(int_lst *head);
-
-// // temporary
-void	ft_print_lst(int_lst *lst, char c);
-int_lst	*merge_lst(int_lst *first, int_lst *second);
-int_lst	*merge_sort_lst(int_lst *head);
-int		find_median(int_lst *head);
-int		ps_lst_len(int_lst *head);
-// int_lst *sort_asc(int_lst *st_a, int len);
-int	set_nums(int_lst *lst, int len, int *sd, int *td);
-int	is_stack_b_rot(int_lst *lst);
-// // quicksort - pt 1
-// int		lst_partition_a(int_lst **st_a, int len, int_lst **st_b);
-// int		lst_partition_b(int_lst **st_b, int len, int_lst **st_a);
-// int_lst	*ps_qs_helper_a(int_lst **st_a, int len, int is_a, int_lst **st_b);
-// int_lst	*ps_qs_helper_b(int_lst **st_b, int len, int is_a, int_lst **st_a);
-// int_lst	*ps_quick_sort(int_lst **st_a);
-// // quicksort - pt 2
-// int		qs_copy_lst(int_lst **new_lst, int_lst *lst, int len);
-// int		qs_find_median(int_lst *head, int len);
-// int_lst	*ps_merge(int_lst **lst_a, int_lst **lst_b, int len, char c);
-
-// // sort
-// int_lst	*sort_desc(int_lst *st_a, int len);
-// int	qs_is_sorted(int_lst *lst, t_sort sort, int len);
-
-// quicksort
-// int_lst	*ps_qs_split(int_lst **stack, int median, int len);
+// ps_quick_sort_1.c
+int	lst_partition_b(int_lst **st_b, int_lst **st_a, int len);
+void ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a);
 int_lst	*ps_quick_sort(int_lst **st_a);
-// int_lst	*sort_desc(int_lst *st_a, int len);
-int_lst *ps_merge(int_lst **lst_a, int_lst **lst_b, int len, char c);
 
+// ps_quick_sort_2.c
 int	qs_copy_lst(int_lst **new_lst, int_lst *lst, int len);
 int	qs_find_median(int_lst *head, int len);
+int_lst	*ps_merge(int_lst **lst_b, int_lst **lst_a, int len, char c);
+int	is_stack_b_rot(int_lst *lst);
 
+// ps_quick_sort_helper.c
+int	check_for_less(int_lst *lst, int num);
+int	check_for_great_eq(int_lst *lst, int num);
+int	is_sorted_beyond(int_lst *lst, int len);
+int_lst	*find_max_beyond_len(int_lst *lst, int len);
+int	find_bigger_num(int_lst *lst, int len, int_lst *max_nd);
 
+// ps_quick_sort_helper_2.c
+void	sort_both_stacks(int_lst **st_a, int_lst **st_b, int len, int is_a);
+void	ps_set_part_len(int	len, int is_a, int *len_a, int *len_b);
 
-
-int	qs_is_sorted(int_lst *lst, t_sort sort, int len);
-
-// sort asc
-// int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
+// ps_sort_asc.c
+int	double_swapped(int_lst **st_a, int_lst **st_b);
+int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len);
+int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len);
+int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
 
+// ps_sort_desc.c
+int	sort_needed_desc(int_lst **st_a, int_lst **st_b, int len);
+int	set_nums(int_lst *lst, int len, int *sd, int *td);
+int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len);
+int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_desc(int_lst **st_a, int_lst **st_b, int len);
 
 
-// lst_sort checker
-int	convert_add_lst(char *str, int_lst **lst);
-void	create_lst_from_str(int_lst **lst, char *str);
-int_lst	*make_num_lst(char *argv[], int argc);
 
 #endif
 
