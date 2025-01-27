@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:07:31 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:57:35 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:00:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,9 @@ int_lst	*check_for_error(int argc, char *argv[])
 	st_a = NULL;
 	if (argc < 2)
 		check_no_output();
-	if (!argv_valid_bonus(argv, argc))
+	if (!argv_valid_bonus(argv, argc)) // 
 		check_error_output();
+	// problem up 2 lines
 	st_a = make_num_lst(argv, argc);
 	if (ft_is_dublicate(&st_a))
 		check_error_output(); // free st_a

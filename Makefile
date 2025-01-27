@@ -1,33 +1,237 @@
+# Directories
+SRC_DIR = src
+OBJ_DIR = obj
+FT_PRINTF_DIR = ft_printf
+GNL_DIR = src_bonus/gnl
 SRC_DIR_BONUS = src_bonus
 OBJ_DIR_BONUS = obj_bonus
-LIB_DIR_BONUS = src_bonus/gnl
-BONUS_NAME = push_swap_bonus
 
-SRCS_BONUS = input_checker_1_bonus.c \
+# Libraries
+LIBS = -L $(FT_PRINTF_DIR) -lftprintf
+LIBS_BONUS = -L $(FT_PRINTF_DIR) -lftprintf -L $(GNL_DIR) -lgnl
+
+# Output
+OUTPUT = push_swap
+OUTPUT_BONUS = push_swap_bonus
+
+# Compiler and Flags
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -I include -I $(FT_PRINTF_DIR) -I $(GNL_DIR)
+
+# Source Files
+SRCS = input_checker_1.c \
+		input_checker_2.c \
+		lists_1.c \
+		lists_2.c \
+		main_helper.c \
+		main.c \
+		merge_sort_lst_1.c \
+		merge_sort_lst_2.c \
+		operands_1.c \
+		operands_2.c \
+		ps_qs_partition_a.c \
+		ps_quick_sort_1.c \
+		ps_quick_sort_2.c \
+		ps_quick_sort_helper.c \
+		ps_quick_sort_helper_2.c \
+		ps_sort_asc.c \
+		ps_sort_desc.c \
+		ps_sort_helper.c
+
+SRCS_BONUS = check_error_bonus.c \
+				input_checker_1_bonus.c \
 				input_checker_2_bonus.c \
+				list_bonus.c \
+				perform_operations_bonus.c \
 				push_swap_bonus.c \
+				input_checker_1.c \
+				input_checker_2.c \
+				lists_1.c \
+				lists_2.c \
+				main_helper.c \
 				merge_sort_lst_1.c \
 				merge_sort_lst_2.c \
 				operands_1.c \
-				operands_2.c
+				operands_2.c \
+				ps_qs_partition_a.c \
+				ps_quick_sort_1.c \
+				ps_quick_sort_2.c \
+				ps_quick_sort_helper.c \
+				ps_quick_sort_helper_2.c \
+				ps_sort_asc.c \
+				ps_sort_desc.c \
+				ps_sort_helper.c
 
-OBJ_BONUS = $(addprefix $(OBJ_DIR_BONUS)/, $(SRCS_BONUS:%.c=%.o))
-LIBS_BONUS = -L$(LIB_DIR_BONUS) libgnl.a
+# Object Files
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+OBJS_BONUS = $(addprefix $(OBJ_DIR_BONUS)/, $(SRCS_BONUS:.c=.o))
 
-CC = gcc
-CFLAGS = #-Wall -Wextra -Werror
+# Rules
+all: $(OUTPUT)
 
-bonus: $(LIB_DIR_BONUS)/libgnl.a $(BONUS_NAME)
+bonus: $(OUTPUT_BONUS)
 
-$(LIB_DIR_BONUS)/libgnl.a:
-	$(MAKE) -C $(LIB_DIR_BONUS)
+$(OUTPUT): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(OUTPUT)
 
-$(BONUS_NAME): $(OBJ_BONUS)
-	$(CC) $(OBJ_BONUS) $(LIBS_BONUS) -o $(BONUS_NAME)
+$(OUTPUT_BONUS): $(OBJS_BONUS)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBS_BONUS) -o $(OUTPUT_BONUS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_DIR_BONUS)/%.o: $(SRC_DIR_BONUS)/%.c
 	@mkdir -p $(OBJ_DIR_BONUS)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+clean:
+	rm -rf $(OBJ_DIR) $(OBJ_DIR_BONUS)
+
+fclean: clean
+	rm -f $(OUTPUT) $(OUTPUT_BONUS)
+
+re: fclean all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Compiler
+# CC = cc
+
+# # Flags
+# CFLAGS = -Wall -Wextra -Werror
+
+# # Directories
+# SRC_DIR = src
+# OBJ_DIR = obj
+# FT_PRINTF_DIR = ft_printf
+# GNL_DIR = src_bonus/gnl
+# SRC_DIR_BONUS = src_bonus
+# OBJ_DIR_BONUS = obj_bonus
+
+# # Libraries
+# LIBS_BONUS = -L $(FT_PRINTF_DIR) -lftprintf -L $(GNL_DIR) -lgnl
+
+# # Output
+# OUTPUT = push_swap_bonus
+# SRCS = input_checker_1.c \
+# 		input_checker_2.c \
+# 		lists_1.c \
+# 		lists_2.c \
+# 		main_helper.c \
+# 		main.c \
+# 		merge_sort_lst_1.c \
+# 		merge_sort_lst_2.c \
+# 		operands_1.c \
+# 		operands_2.c \
+# 		ps_qs_partition_a.c \
+# 		ps_quick_sort_1.c \
+# 		ps_quick_sort_2.c \
+# 		ps_quick_sort_helper.c \
+# 		ps_quick_sort_helper_2.c \
+# 		ps_sort_asc.c \
+# 		ps_sort_desc.c \
+# 		ps_sort_helper.c
+
+# # Source Files
+# SRCS_BONUS = check_error_bonus.c \
+# 				input_checker_1_bonus.c \
+# 				input_checker_2_bonus.c \
+# 				list_bonus.c \
+# 				perform_operations_bonus.c \
+# 				push_swap_bonus.c
+# 				input_checker_1.c \
+# 				input_checker_2.c \
+# 				lists_1.c \
+# 				lists_2.c \
+# 				main_helper.c \
+# 				merge_sort_lst_1.c \
+# 				merge_sort_lst_2.c \
+# 				operands_1.c \
+# 				operands_2.c \
+# 				ps_qs_partition_a.c \
+# 				ps_quick_sort_1.c \
+# 				ps_quick_sort_2.c \
+# 				ps_quick_sort_helper.c \
+# 				ps_quick_sort_helper_2.c \
+# 				ps_sort_asc.c \
+# 				ps_sort_desc.c \
+# 				ps_sort_helper.c
+# # $(wildcard $(SRC_DIR_BONUS)/*.c) $(shell find $(SRC_DIR) -maxdepth 1 -name "*.c" ! -name "main.c")
+
+# # Object Files
+# OBJS_BONUS = $(addprefix $(OBJ_DIR_BONUS)/, $(SRCS_BONUS:.c=.o))
+# OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
+
+# # Build the executable
+# $(OUTPUT): $(OBJS_BONUS) $(OBJS)
+# 	$(CC) $(CFLAGS) $(OBJS_BONUS) $(OBJS) -o $(OUTPUT) $(LIBS_BONUS)
+
+# # Compile source files into object files
+# $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+# 	mkdir -p $(OBJ_DIR)
+# 	$(CC) $(CFLAGS) -c $< -o $@
+
+# # Clean the build
+# clean:
+# 	rm -f $(OBJS_BONUS)
+
+# # Clean everything
+# fclean: clean
+# 	rm -f $(OUTPUT)
+
+# # Rebuild
+# re: fclean $(OUTPUT)
+
+# .PHONY: all clean fclean re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,7 +277,7 @@ $(OBJ_DIR_BONUS)/%.o: $(SRC_DIR_BONUS)/%.c
 
 # # Default rule to build the executable
 # all: $(NAME)
-# 	./push_swap 4 40 10 49 82 70 89 76 55 31 29 37 45 5 9 13 60 80 22 86 67 42 93 101
+
 
 # # Link object files to create the executable
 # $(NAME): $(OBJS)
@@ -106,7 +310,7 @@ $(OBJ_DIR_BONUS)/%.o: $(SRC_DIR_BONUS)/%.c
 
 
 
-
+# ./push_swap 4 40 10 49 82 70 89 76 55 31 29 37 45 5 9 13 60 80 22 86 67 42 93 101
 
 
 

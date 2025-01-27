@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:14:43 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:58:12 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:34:07 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,25 @@ int main(int argc, char *argv[])
 
 	sorted = NULL;
 	st_b = NULL;
-	int	fd = open("test.txt", O_RDONLY);
+	// int	fd = open("test.txt", O_RDONLY);
+	int fd = 0;
 	st_a = check_for_error(argc, argv);
 	copy_lst(&sorted, st_a);
 	sorted = merge_sort_lst(sorted);
 	// ft_print_lst(sorted, '$');
 	init_len = ps_lst_len(st_a);
-	perform_operands(&st_a, &st_b, fd);
+	if (!perform_operands(&st_a, &st_b, fd))
+	{
+		ft_printf("KO\n"); // free lists
+		return (0);
+	}
 	if (init_len != ps_lst_len(st_a))
-		print_error(3); // free lists
-	ft_print_lst(st_a, '9');
-	printf("is_sorted: %d\n", is_sorted(st_a, ASC));
+		ft_printf("KO\n"); // free lists
+	// ft_print_lst(st_a, '9');
+	// printf("is_sorted: %d\n", is_sorted(st_a, ASC));
 	if (!is_sorted(st_a, ASC) || !lst_compare(st_a, sorted))
-		print_error(4); // free lists
-	ft_printf("OK\n");
+		ft_printf("KO\n"); // free lists
+	else
+		ft_printf("OK\n");
 	return (0);
 }

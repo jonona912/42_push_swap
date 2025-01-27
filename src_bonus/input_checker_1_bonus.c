@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:36:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:57:45 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:15:47 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,22 @@ int	check_int_range_bonus(char *str)
 int	argv_valid_bonus(char *argv[], int argc)
 {
 	int	i;
+	int	is_space;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (contains_space(argv[i]) && !check_str_bonus(argv[i]))
+		is_space = contains_space(argv[i]);
+		if (is_space && !check_str_bonus(argv[i]))
 			return (0);
-		else if (!ft_isint(argv[i]))
+		else if (!ft_isint(argv[i]) && !is_space)
+		{
 			return (0);
-		else if (!check_int_range_bonus(argv[i]))
+		}
+		else if (!check_int_range_bonus(argv[i]) && !is_space)
+		{
 			return (0);
+		}
 		i++;
 	}
 	return (1);

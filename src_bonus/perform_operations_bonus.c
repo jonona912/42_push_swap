@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:08:42 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:59:06 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:35:12 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	perform_operands(int_lst **st_a, int_lst **st_b, int fd)
 {
 	char	*str;
 	t_stack_operations	ops;
-	t_stack_operations	ops_no_nl;
+	// t_stack_operations	ops_no_nl;
 	int	flag;
 	static int i = 0;
 
@@ -57,12 +57,12 @@ int	perform_operands(int_lst **st_a, int_lst **st_b, int fd)
 	{
 		i++;
 		flag = 0;
-		if (!ps_strcmp(str, ops.pa) && *st_b)
+		if (!ps_strcmp(str, ops.pa))
 		{
 			push_x(st_b, st_a, 'a', NOTPRINT);
 			flag = 1;
 		}
-		else if (!ps_strcmp(str, ops.pb) && *st_a)
+		else if (!ps_strcmp(str, ops.pb))
 		{
 			push_x(st_a, st_b, 'b', NOTPRINT);
 			flag = 1;
@@ -114,7 +114,9 @@ int	perform_operands(int_lst **st_a, int_lst **st_b, int fd)
 		}
 		free (str);
 		if (flag == 0)
+		{
 			print_error(2);
+		}
 		str = get_next_line(fd);
 	}
 	return (1);

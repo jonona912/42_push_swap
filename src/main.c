@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:15:51 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 12:14:41 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:02:05 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ int	main(int argc, char *argv[])
 	if (is_sorted(st_a, ASC))
 		return (0);
 	ps_quick_sort(&st_a);
-	ft_print_lst(st_a, '~');
-	if (is_sorted(st_a, ASC))
-		printf("sorted\n");
-	else
-		printf("not sorted\n");
+	// ft_print_lst(st_a, '~');
+	// if (is_sorted(st_a, ASC))
+	// 	printf("sorted\n");
+	// else
+	// 	printf("not sorted\n");
 	ps_lst_clear(&st_a);
 	return (0);
 }

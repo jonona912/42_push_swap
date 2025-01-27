@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:03:41 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:36:19 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:17:23 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int_lst	*ps_quick_sort(int_lst **st_a)
 {
 	int_lst	*st_b;
 	int		len;
-	int		len_b;
+	// int		len_b;
 
 	st_b = NULL;
 	if (!st_a)

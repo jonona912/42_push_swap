@@ -6,12 +6,11 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 21:02:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 12:32:53 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:46:27 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-// #include <stdio.h>
 
 int	ft_free_rd(char *buffer, t_gnl_list **lst)
 {
@@ -116,6 +115,7 @@ char	*get_next_line(int fd)
 	return (ft_line_assembly(&line_lst, &residual, read_n));
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	int	fd;
@@ -126,7 +126,8 @@ char	*get_next_line(int fd)
 // 	// fd = open("sth.txt", O_RDONLY);
 // 	// fd = open("1char.txt", O_RDONLY);
 // 	// fd = open("one_line_no_nl.txt", O_RDONLY);
-// 	fd = open("variable_nls.txt", O_RDONLY);
+// 	// fd = open("variable_nls.txt", O_RDONLY);
+// 	fd = 0;
 // 	printf("FD: %d\nBUFFSIZE: %d\n", fd, BUFFER_SIZE);
 // 	while (i < 14)
 // 	{
