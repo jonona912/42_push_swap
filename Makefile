@@ -40,8 +40,7 @@ SRCS = input_checker_1.c \
 		ps_sort_helper.c
 
 SRCS_BONUS = check_error_bonus.c \
-				input_checker_1_bonus.c \
-				input_checker_2_bonus.c \
+				checker_bonus.c \
 				list_bonus.c \
 				perform_operations_bonus.c \
 				push_swap_bonus.c \
@@ -71,6 +70,7 @@ OBJS_BONUS = $(addprefix $(OBJ_DIR_BONUS)/, $(SRCS_BONUS:.c=.o))
 all: $(OUTPUT)
 
 bonus: $(OUTPUT_BONUS)
+	
 
 $(OUTPUT): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(OUTPUT)

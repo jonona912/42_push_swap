@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 22:53:05 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 17:35:34 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:00:22 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	lst_part_a_helper(int_lst **st_a, int_lst **st_b, int len, int *len_b)
 		{
 			if ((*st_a)->value < median)
 			{
-				push_x(st_a, st_b, 'b', PRINT);
+				push_x(st_a, st_b, 'b', NOTPRINT);
 				(*len_b)++;
 			}
 			else

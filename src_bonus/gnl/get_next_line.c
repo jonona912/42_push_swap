@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 21:02:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 14:46:27 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 19:47:29 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_create_residual(char *str, char	**residual, char **line)
 
 char	*ft_line_assembly(t_gnl_list **lst, char **residual, int read_n)
 {
-	char	*line;
+	char		*line;
 	t_gnl_list	*line_lst;
 
 	line_lst = *lst;
@@ -94,9 +94,9 @@ char	*ft_line_assembly(t_gnl_list **lst, char **residual, int read_n)
 
 char	*get_next_line(int fd)
 {
-	static char	*residual = NULL;
+	static char		*residual = NULL;
 	t_gnl_list		*line_lst;
-	int			read_n;
+	int				read_n;
 
 	read_n = 0;
 	line_lst = NULL;

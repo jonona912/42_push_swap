@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:49:26 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 12:32:53 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 19:46:53 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_gnl_list
 {
-	void			*content;
+	void				*content;
 	struct s_gnl_list	*next;
 }	t_gnl_list;
 

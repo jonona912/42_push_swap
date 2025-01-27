@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:25:52 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 13:34:30 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 19:48:10 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	create_lst_from_str(int_lst **lst, char *str)
 int_lst	*make_num_lst(char *argv[], int argc)
 {
 	int_lst	*st_a;
-	// int		stack_num;
 	int		i;
 
 	st_a = NULL;

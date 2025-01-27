@@ -6,12 +6,11 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 21:02:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 12:32:53 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 19:46:31 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-// #include <stdio.h>
 
 int	ft_read_lst(int fd, t_gnl_list **lst, int temp_rd, int acum)
 {
@@ -71,7 +70,7 @@ char	*ft_create_residual(char *str, char	**residual, char **line)
 
 char	*ft_line_assembly(t_gnl_list **lst, char **residual, int read_n)
 {
-	char	*line;
+	char		*line;
 	t_gnl_list	*line_lst;
 
 	if ((*lst) == NULL)
@@ -124,7 +123,7 @@ char	*get_next_line(int fd)
 {
 	static t_res	*res_lst;
 	char			**residual;
-	t_gnl_list			*line_lst;
+	t_gnl_list		*line_lst;
 	int				read_n;
 	char			*ret;
 
