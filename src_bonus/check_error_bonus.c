@@ -6,11 +6,11 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:07:31 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 16:12:56 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:57:35 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "../include/push_swap_bonus.h"
 
 void	check_error_output()
 {

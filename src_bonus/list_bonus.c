@@ -6,11 +6,12 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 14:57:46 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 14:58:08 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:57:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+// #include "push_swap_bonus.h"
+#include "../include/push_swap_bonus.h"
 
 int	lst_compare(int_lst	*lst_a, int_lst *lst_b)
 {

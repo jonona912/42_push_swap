@@ -6,11 +6,12 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:36:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 13:19:31 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:57:45 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+// #include "push_swap_bonus.h"
+#include "../include/push_swap_bonus.h"
 
 int	check_int_range_bonus(char *str)
 {

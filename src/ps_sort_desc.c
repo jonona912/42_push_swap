@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 18:57:14 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 20:16:06 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:24:09 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,6 @@ int	sort_needed_desc(int_lst **st_a, int_lst **st_b, int len)
 	return (1);
 }
 
-int	set_nums(int_lst *lst, int len, int *sd, int *td)
-{
-	if (len == 3)
-	{
-		*sd = lst->next->value;
-		*td = lst->next->next->value;
-		return (lst->value);
-	}
-	else if (len == 2)
-	{
-		*sd = lst->next->value;
-		return (lst->value);
-	}
-	if (len == 1)
-		return (lst->value);
-}
-
 int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len)
 {
 	int		ft;
@@ -54,7 +37,7 @@ int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len)
 	int		td;
 
 	ft = set_nums(*st_b, len, &sd, &td);
-	while (len)	
+	while (len)
 	{
 		if (len == 3 && (td > ft && td > sd))
 			rev_rotate_x(st_b, 'b', PRINT);
@@ -69,6 +52,7 @@ int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len)
 		}
 		ft = set_nums(*st_b, len, &sd, &td);
 	}
+	return (*st_b);
 }
 
 int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len)
@@ -95,9 +79,7 @@ int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len)
 			len--;
 		}
 		else if (len && ft < sd)
-		{
 			swap_x(st_b, 'b', PRINT);
-		}
 	}
 	return (*st_b);
 }

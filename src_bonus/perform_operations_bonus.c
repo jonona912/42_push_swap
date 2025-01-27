@@ -6,11 +6,12 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:08:42 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 18:52:41 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:59:06 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+// #include "push_swap_bonus.h"
+#include "../include/push_swap_bonus.h"
 
 t_stack_operations	init_operations()
 {
@@ -29,8 +30,6 @@ t_stack_operations	init_operations()
 	ops.rrr = "rrr\n";
 	return	(ops);
 }
-
-
 
 int	ps_strcmp(char	*s1, char *opd)
 {

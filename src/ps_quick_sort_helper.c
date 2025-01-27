@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:00:03 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 20:02:12 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:37:41 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	is_sorted_beyond(int_lst *lst, int len)
 
 int_lst	*find_max_beyond_len(int_lst *lst, int len)
 {
-	int	i;
+	int		i;
 	int_lst	*max_nd;
 
 	i = 0;
@@ -86,7 +86,6 @@ int	find_bigger_num(int_lst *lst, int len, int_lst *max_nd)
 		lst = lst->next;
 		i++;
 	}
-
 	if (!lst)
 		return (0);
 	while (lst)

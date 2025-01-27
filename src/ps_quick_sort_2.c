@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:29:32 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 20:01:57 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:36:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int_lst	*ps_merge(int_lst **lst_b, int_lst **lst_a, int len, char c)
 
 int	is_stack_b_rot(int_lst *lst)
 {
-	int	first;
+	int		first;
 	int_lst	*last_nd;
 
 	if (!lst || !lst->next)

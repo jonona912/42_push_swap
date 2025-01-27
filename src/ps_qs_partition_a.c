@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 22:53:05 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 22:55:28 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:20:52 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates)
+void	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates)
 {
 	(*n_rotates)++;
 	if (is_stack_b_rot(*st_b))

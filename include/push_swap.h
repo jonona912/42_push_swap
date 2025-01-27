@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 03:06:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 22:55:19 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:20:50 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	rr(int_lst	**lst_a, int_lst **lst_b, t_print status);
 int	rrr(int_lst	**lst_a, int_lst **lst_b, t_print status);
 
 // ps_qs_partition_a.c
-int	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates);
+void	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates);
 int	lst_part_a_helper(int_lst **st_a, int_lst **st_b, int len, int *len_b);
 int	lst_partition_a(int_lst **st_a, int_lst **st_b, int len);
 
@@ -119,20 +119,21 @@ void	sort_both_stacks(int_lst **st_a, int_lst **st_b, int len, int is_a);
 void	ps_set_part_len(int	len, int is_a, int *len_a, int *len_b);
 
 // ps_sort_asc.c
-int	double_swapped(int_lst **st_a, int_lst **st_b);
-int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len);
+int		sort_needed_asc(int_lst **st_a, int_lst **st_b, int len);
+void	rev_rot_sor_helper(int_lst **st_a, int_lst **st_b);
 int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len);
 
 // ps_sort_desc.c
 int	sort_needed_desc(int_lst **st_a, int_lst **st_b, int len);
-int	set_nums(int_lst *lst, int len, int *sd, int *td);
 int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len);
 int_lst	*sort_desc(int_lst **st_a, int_lst **st_b, int len);
 
-
+// ps_sort_helper.c
+int	double_swapped(int_lst **st_a, int_lst **st_b);
+int	set_nums(int_lst *lst, int len, int *sd, int *td);
 
 #endif
 

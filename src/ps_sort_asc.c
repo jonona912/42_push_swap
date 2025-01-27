@@ -1,44 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_sort_1_asc.c                                    :+:      :+:    :+:   */
+/*   ps_sort_asc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 21:14:48 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 20:14:49 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:24:58 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	double_swapped(int_lst **st_a, int_lst **st_b)
-{
-	int	a1;
-	int	a2;
-	int	b1;
-	int	b2;
-
-	if (*st_b && (*st_a)->next && (*st_b)->next)
-	{
-		a1 = (*st_a)->value;
-		a2 = (*st_a)->next->value;
-		b1 = (*st_b)->value;
-		b2 = (*st_b)->next->value;
-		if ((a1 > a2) && (b1 < b2))
-		{
-			ss(st_a, st_b, PRINT);
-			return (1);
-		}
-	}
-	return (0);
-}
-
 int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len)
 {
 	if (len == 1)
 		return (0);
-	if (qs_is_sorted(*st_a, ASC, len)) // 1 2 3
+	if (qs_is_sorted(*st_a, ASC, len))
 		return (0);
 	if (len == 2)
 	{
@@ -52,6 +30,14 @@ int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len)
 	return (1);
 }
 
+void	rev_rot_sor_helper(int_lst **st_a, int_lst **st_b)
+{
+	if (is_stack_b_rot(*st_b))
+		rrr(st_a, st_b, PRINT);
+	else
+		rev_rotate_x(st_a, 'a', PRINT);
+}
+
 int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len)
 {
 	int		ft;
@@ -62,12 +48,7 @@ int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len)
 	while (!(ft < sd && sd < td))
 	{
 		if (ft < sd && sd > td && ft > td)
-		{
-			if (is_stack_b_rot(*st_b))
-				rrr(st_a, st_b, PRINT);
-			else
-				rev_rotate_x(st_a, 'a', PRINT);
-		}
+			rev_rot_sor_helper(st_a, st_b);
 		else if (ft > sd && ft > td)
 		{
 			if (is_stack_b_rot(*st_b))
@@ -82,6 +63,7 @@ int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len)
 		}
 		ft = set_nums(*st_a, len, &sd, &td);
 	}
+	return (*st_a);
 }
 
 int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
@@ -90,9 +72,7 @@ int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
 	int		sd;
 	int		td;
 
-	ft = (*st_a)->value;
-	sd = (*st_a)->next->value;
-	td = (*st_a)->next->next->value;
+	ft = set_nums(*st_a, len, &sd, &td);
 	while (len != 3 || !(ft < sd && sd < td))
 	{
 		if (ft > sd)
@@ -110,9 +90,7 @@ int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
 			push_x(st_b, st_a, 'a', PRINT);
 			len++;
 		}
-		ft = (*st_a)->value;
-		sd = (*st_a)->next->value;
-		td = (*st_a)->next->next->value;
+		ft = set_nums(*st_a, len, &sd, &td);
 	}
 	return (*st_a);
 }

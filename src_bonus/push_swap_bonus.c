@@ -6,11 +6,12 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:14:43 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/23 20:09:42 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:58:12 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+// #include "push_swap_bonus.h"
+#include "../include/push_swap_bonus.h"
 #include <stdio.h>
 
 void	ft_print_lst(int_lst *lst, char c)
