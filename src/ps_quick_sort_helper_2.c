@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 22:25:57 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 22:29:26 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:19:49 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sort_both_stacks(int_lst **st_a, int_lst **st_b, int len, int is_a)
+void	sort_b_stacks(t_ps_lst **st_a, t_ps_lst **st_b, int len, int is_a)
 {
 	if (len < 4 && is_a == 1)
 	{

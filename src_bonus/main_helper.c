@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:25:52 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 19:48:10 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 21:04:56 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	convert_add_lst(char *str, int_lst **lst)
+int	convert_add_lst(char *str, t_ps_lst **lst)
 {
 	int		stack_num;
 
@@ -21,7 +21,7 @@ int	convert_add_lst(char *str, int_lst **lst)
 	return (1);
 }
 
-void	create_lst_from_str(int_lst **lst, char *str)
+void	create_lst_from_str(t_ps_lst **lst, char *str)
 {
 	char	**str_arr;
 	int		i;
@@ -35,10 +35,10 @@ void	create_lst_from_str(int_lst **lst, char *str)
 	}
 }
 
-int_lst	*make_num_lst(char *argv[], int argc)
+t_ps_lst	*make_num_lst(char *argv[], int argc)
 {
-	int_lst	*st_a;
-	int		i;
+	t_ps_lst	*st_a;
+	int			i;
 
 	st_a = NULL;
 	i = 1;

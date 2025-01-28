@@ -6,16 +6,16 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:59:27 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 20:09:32 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:27:19 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	divide_list(int_lst **lst, int_lst **half2, int mid)
+int	divide_list(t_ps_lst **lst, t_ps_lst **half2, int mid)
 {
-	int_lst	*current;
-	int		i;
+	t_ps_lst	*current;
+	int			i;
 
 	if (mid < 2)
 		return (0);
@@ -33,9 +33,9 @@ int	divide_list(int_lst **lst, int_lst **half2, int mid)
 	return (1);
 }
 
-int	copy_lst(int_lst **new_lst, int_lst *lst)
+int	copy_lst(t_ps_lst **new_lst, t_ps_lst *lst)
 {
-	int_lst	*new_node;
+	t_ps_lst	*new_node;
 
 	if (!lst)
 		return (0);
@@ -48,9 +48,9 @@ int	copy_lst(int_lst **new_lst, int_lst *lst)
 	return (1);
 }
 
-int	copy_values(int_lst	**sorted, int_lst **cp1)
+int	copy_values(t_ps_lst	**sorted, t_ps_lst **cp1)
 {
-	int_lst	*node1;
+	t_ps_lst	*node1;
 
 	node1 = *cp1;
 	*cp1 = (*cp1)->next;
@@ -59,9 +59,9 @@ int	copy_values(int_lst	**sorted, int_lst **cp1)
 	return (1);
 }
 
-int	ft_merge(int_lst **half1, int_lst **half2)
+int	ft_merge(t_ps_lst **half1, t_ps_lst **half2)
 {
-	int_lst	*sorted;
+	t_ps_lst	*sorted;
 
 	sorted = NULL;
 	while ((*half1) && (*half2))

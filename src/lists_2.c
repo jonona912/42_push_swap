@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:15:26 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:35:45 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_isint(char *str)
 	return (1);
 }
 
-int	ps_lst_len(int_lst *head)
+int	ps_lst_len(t_ps_lst *head)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ int	ps_lst_len(int_lst *head)
 	return (i);
 }
 
-int	qs_is_sorted(int_lst *lst, t_sort sort, int len)
+int	qs_is_sorted(t_ps_lst *lst, t_sort sort, int len)
 {
 	int	i;
 

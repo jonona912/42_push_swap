@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:54:23 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 15:23:13 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	is_sorted(int_lst *lst, t_sort sort)
+int	is_sorted(t_ps_lst *lst, t_sort sort)
 {
 	if (!lst)
 		return (0);

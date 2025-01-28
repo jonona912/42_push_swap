@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:08:42 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 19:29:14 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:59:30 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stk_ops	init_operations(void)
 	return (ops);
 }
 
-int	pfm_ops_helper_1(int_lst **st_a, int_lst **st_b, t_stk_ops ops, char *str)
+int	p_hpr_1(t_ps_lst **st_a, t_ps_lst **st_b, t_stk_ops ops, char *str)
 {
 	int	flag;
 
@@ -58,7 +58,7 @@ int	pfm_ops_helper_1(int_lst **st_a, int_lst **st_b, t_stk_ops ops, char *str)
 	return (flag);
 }
 
-int	pfm_ops_helper_2(int_lst **st_a, int_lst **st_b, t_stk_ops ops, char *str)
+int	p_hpr_2(t_ps_lst **st_a, t_ps_lst **st_b, t_stk_ops ops, char *str)
 {
 	int	flag;
 
@@ -86,7 +86,7 @@ int	pfm_ops_helper_2(int_lst **st_a, int_lst **st_b, t_stk_ops ops, char *str)
 	return (flag);
 }
 
-int	pfm_ops_helper_3(int_lst **st_a, int_lst **st_b, t_stk_ops ops, char *str)
+int	p_hpr_3(t_ps_lst **st_a, t_ps_lst **st_b, t_stk_ops ops, char *str)
 {
 	int	flag;
 
@@ -109,7 +109,7 @@ int	pfm_ops_helper_3(int_lst **st_a, int_lst **st_b, t_stk_ops ops, char *str)
 	return (flag);
 }
 
-int	perform_operands(int_lst **st_a, int_lst **st_b, int fd)
+int	pfm_ops(t_ps_lst **st_a, t_ps_lst **st_b, t_ps_lst **s, int fd)
 {
 	char		*str;
 	t_stk_ops	ops;
@@ -119,14 +119,17 @@ int	perform_operands(int_lst **st_a, int_lst **st_b, int fd)
 	str = get_next_line(fd);
 	while (str)
 	{
-		flag = pfm_ops_helper_1(st_a, st_b, ops, str);
+		flag = p_hpr_1(st_a, st_b, ops, str);
 		if (!flag)
-			flag = pfm_ops_helper_2(st_a, st_b, ops, str);
+			flag = p_hpr_2(st_a, st_b, ops, str);
 		if (!flag)
-			flag = pfm_ops_helper_3(st_a, st_b, ops, str);
+			flag = p_hpr_3(st_a, st_b, ops, str);
 		free (str);
 		if (flag == 0)
 		{
+			ps_lst_clear(st_a);
+			ps_lst_clear(st_b);
+			ps_lst_clear(s);
 			print_error(2);
 		}
 		str = get_next_line(fd);

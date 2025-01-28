@@ -6,16 +6,16 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 20:29:32 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:36:57 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:22:29 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	qs_copy_lst(int_lst **new_lst, int_lst *lst, int len)
+int	qs_copy_lst(t_ps_lst **new_lst, t_ps_lst *lst, int len)
 {
-	int_lst	*new_node;
-	int		i;
+	t_ps_lst	*new_node;
+	int			i;
 
 	i = 0;
 	if (!lst)
@@ -30,12 +30,12 @@ int	qs_copy_lst(int_lst **new_lst, int_lst *lst, int len)
 	return (1);
 }
 
-int	qs_find_median(int_lst *head, int len)
+int	qs_find_median(t_ps_lst *head, int len)
 {
-	int_lst	*median;
-	int_lst	*lst_copy;
-	int_lst	*sorted;
-	int		ret;
+	t_ps_lst	*median;
+	t_ps_lst	*lst_copy;
+	t_ps_lst	*sorted;
+	int			ret;
 
 	lst_copy = NULL;
 	if (!head)
@@ -49,7 +49,7 @@ int	qs_find_median(int_lst *head, int len)
 	return (ret);
 }
 
-int_lst	*ps_merge(int_lst **lst_b, int_lst **lst_a, int len, char c)
+t_ps_lst	*ps_merge(t_ps_lst **lst_b, t_ps_lst **lst_a, int len, char c)
 {
 	int	i;
 
@@ -62,10 +62,10 @@ int_lst	*ps_merge(int_lst **lst_b, int_lst **lst_a, int len, char c)
 	return (*lst_a);
 }
 
-int	is_stack_b_rot(int_lst *lst)
+int	is_stack_b_rot(t_ps_lst *lst)
 {
-	int		first;
-	int_lst	*last_nd;
+	int			first;
+	t_ps_lst	*last_nd;
 
 	if (!lst || !lst->next)
 		return (0);

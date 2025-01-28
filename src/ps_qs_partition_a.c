@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 22:53:05 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 20:00:22 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:21:36 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates)
+void	ps_ptn_rot_a(t_ps_lst **st_a, t_ps_lst **st_b, int *n_rotates)
 {
 	(*n_rotates)++;
 	if (is_stack_b_rot(*st_b))
@@ -21,7 +21,7 @@ void	ps_partition_rotate_a(int_lst **st_a, int_lst **st_b, int *n_rotates)
 		rotate_x(st_a, 'a', PRINT);
 }
 
-int	lst_part_a_helper(int_lst **st_a, int_lst **st_b, int len, int *len_b)
+int	lst_a_hpr(t_ps_lst **st_a, t_ps_lst **st_b, int len, int *len_b)
 {
 	int	i;
 	int	n_rotates;
@@ -36,11 +36,11 @@ int	lst_part_a_helper(int_lst **st_a, int_lst **st_b, int len, int *len_b)
 		{
 			if ((*st_a)->value < median)
 			{
-				push_x(st_a, st_b, 'b', NOTPRINT);
+				push_x(st_a, st_b, 'b', PRINT);
 				(*len_b)++;
 			}
 			else
-				ps_partition_rotate_a(st_a, st_b, &n_rotates);
+				ps_ptn_rot_a(st_a, st_b, &n_rotates);
 			i++;
 		}
 		else
@@ -49,7 +49,7 @@ int	lst_part_a_helper(int_lst **st_a, int_lst **st_b, int len, int *len_b)
 	return (n_rotates);
 }
 
-int	lst_partition_a(int_lst **st_a, int_lst **st_b, int len)
+int	lst_partition_a(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int	i;
 	int	len_b;
@@ -59,7 +59,7 @@ int	lst_partition_a(int_lst **st_a, int_lst **st_b, int len)
 	len_b = 0;
 	i = 0;
 	is_rotate = is_sorted_beyond(*st_a, len);
-	n_rotates = lst_part_a_helper(st_a, st_b, len, &len_b);
+	n_rotates = lst_a_hpr(st_a, st_b, len, &len_b);
 	if (is_rotate)
 	{
 		i = 0;

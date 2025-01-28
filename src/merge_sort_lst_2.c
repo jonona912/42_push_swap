@@ -6,17 +6,17 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:53:17 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 21:01:55 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:26:26 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int_lst	*split_lst(int_lst *head)
+t_ps_lst	*split_lst(t_ps_lst *head)
 {
-	int_lst	*front_runner;
-	int_lst	*trailer;
-	int_lst	*half2;
+	t_ps_lst	*front_runner;
+	t_ps_lst	*trailer;
+	t_ps_lst	*half2;
 
 	if (!head || !head->next)
 		return (head);
@@ -33,7 +33,7 @@ int_lst	*split_lst(int_lst *head)
 	return (half2);
 }
 
-int_lst	*merge_lst(int_lst *first, int_lst *second)
+t_ps_lst	*merge_lst(t_ps_lst *first, t_ps_lst *second)
 {
 	if (!first)
 		return (second);
@@ -51,9 +51,9 @@ int_lst	*merge_lst(int_lst *first, int_lst *second)
 	}
 }
 
-int_lst	*merge_sort_lst(int_lst *head)
+t_ps_lst	*merge_sort_lst(t_ps_lst *head)
 {
-	int_lst	*half2;
+	t_ps_lst	*half2;
 
 	if (!head || !head->next)
 		return (head);
@@ -63,12 +63,12 @@ int_lst	*merge_sort_lst(int_lst *head)
 	return (merge_lst(head, half2));
 }
 
-int	find_median(int_lst *head)
+int	find_median(t_ps_lst *head)
 {
-	int_lst	*median;
-	int_lst	*lst_copy;
-	int_lst	*sorted;
-	int		ret;
+	t_ps_lst	*median;
+	t_ps_lst	*lst_copy;
+	t_ps_lst	*sorted;
+	int			ret;
 
 	lst_copy = NULL;
 	if (!head)

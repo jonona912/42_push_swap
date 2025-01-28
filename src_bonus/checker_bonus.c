@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_1_bonus.c                                  :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:36:56 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 19:26:38 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:23:34 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	check_str_bonus(char *str)
 	str_arr = ft_split(str, ' ');
 	if (!str_arr)
 		return (-1);
-	while (!*str_arr)
+	while (*str_arr)
 	{
 		if (!ft_isint(*str_arr))
-			return (0);
+			print_error(6);
 		if (!check_int_range_bonus(*str_arr))
 			return (0);
 		str_arr++;

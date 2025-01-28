@@ -6,14 +6,14 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:15:51 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 17:02:05 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdlib.h>
 
-void	ft_print_lst(int_lst *lst, char c)
+void	ft_prt_ps_lst(t_ps_lst *lst, char c)
 {
 	int	i;
 
@@ -27,26 +27,9 @@ void	ft_print_lst(int_lst *lst, char c)
 	}
 }
 
-// int	main(int argc, char *argv[])
-// {
-// 	int_lst	*st_a;
-
-// 	if (argc < 2)
-// 		return (0);
-// 	argv_valid(argv, argc);
-// 	st_a = make_num_lst(argv, argc);
-// 	if (ft_is_dublicate(&st_a))
-// 		exit(2);
-// 	if (is_sorted(st_a, ASC))
-// 		return (0);
-// 	ps_quick_sort(&st_a);
-// 	ps_lst_clear(&st_a);
-// 	return (0);
-// }
-
 int	main(int argc, char *argv[])
 {
-	int_lst	*st_a;
+	t_ps_lst	*st_a;
 
 	if (argc < 2)
 		return (0);
@@ -57,11 +40,28 @@ int	main(int argc, char *argv[])
 	if (is_sorted(st_a, ASC))
 		return (0);
 	ps_quick_sort(&st_a);
-	// ft_print_lst(st_a, '~');
-	// if (is_sorted(st_a, ASC))
-	// 	printf("sorted\n");
-	// else
-	// 	printf("not sorted\n");
 	ps_lst_clear(&st_a);
 	return (0);
 }
+
+// int	main(int argc, char *argv[])
+// {
+// 	t_ps_lst	*st_a;
+
+// 	if (argc < 2)
+// 		return (0);
+// 	argv_valid(argv, argc);
+// 	st_a = make_num_lst(argv, argc);
+// 	if (ft_is_dublicate(&st_a))
+// 		exit(2);
+// 	if (is_sorted(st_a, ASC))
+// 		return (0);
+// 	ps_quick_sort(&st_a);
+// 	// ft_prt_ps_lst(st_a, '~');
+// 	// if (is_sorted(st_a, ASC))
+// 	// 	printf("sorted\n");
+// 	// else
+// 	// 	printf("not sorted\n");
+// 	ps_lst_clear(&st_a);
+// 	return (0);
+// }

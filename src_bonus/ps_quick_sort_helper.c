@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:00:03 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 11:37:41 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:21:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	check_for_less(int_lst *lst, int num)
+int	check_for_less(t_ps_lst *lst, int num)
 {
 	while (lst)
 	{
@@ -23,7 +23,7 @@ int	check_for_less(int_lst *lst, int num)
 	return (0);
 }
 
-int	check_for_great_eq(int_lst *lst, int num)
+int	check_for_great_eq(t_ps_lst *lst, int num)
 {
 	while (lst)
 	{
@@ -34,7 +34,7 @@ int	check_for_great_eq(int_lst *lst, int num)
 	return (0);
 }
 
-int	is_sorted_beyond(int_lst *lst, int len)
+int	is_sorted_beyond(t_ps_lst *lst, int len)
 {
 	int	i;
 
@@ -51,10 +51,10 @@ int	is_sorted_beyond(int_lst *lst, int len)
 	return (0);
 }
 
-int_lst	*find_max_beyond_len(int_lst *lst, int len)
+t_ps_lst	*find_max_beyond_len(t_ps_lst *lst, int len)
 {
-	int		i;
-	int_lst	*max_nd;
+	int			i;
+	t_ps_lst	*max_nd;
 
 	i = 0;
 	while (i < len && lst)
@@ -74,7 +74,7 @@ int_lst	*find_max_beyond_len(int_lst *lst, int len)
 	return (max_nd);
 }
 
-int	find_bigger_num(int_lst *lst, int len, int_lst *max_nd)
+int	find_bigger_num(t_ps_lst *lst, int len, t_ps_lst *max_nd)
 {
 	int	i;
 	int	max;

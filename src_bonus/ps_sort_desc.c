@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 18:57:14 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 12:24:09 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	sort_needed_desc(int_lst **st_a, int_lst **st_b, int len)
+int	sort_needed_desc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	if (len == 1)
 	{
@@ -30,7 +30,7 @@ int	sort_needed_desc(int_lst **st_a, int_lst **st_b, int len)
 	return (1);
 }
 
-int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len)
+t_ps_lst	*sort_3_null_desc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int		ft;
 	int		sd;
@@ -55,7 +55,7 @@ int_lst	*sort_3_null_desc(int_lst **st_a, int_lst **st_b, int len)
 	return (*st_b);
 }
 
-int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len)
+t_ps_lst	*sort_3_desc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int	ft;
 	int	sd;
@@ -84,7 +84,7 @@ int_lst	*sort_3_desc(int_lst **st_a, int_lst **st_b, int len)
 	return (*st_b);
 }
 
-int_lst	*sort_desc(int_lst **st_a, int_lst **st_b, int len)
+t_ps_lst	*sort_desc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int		lst_len;
 

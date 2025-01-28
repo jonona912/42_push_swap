@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 15:46:07 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/25 22:07:10 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ss(int_lst	**lst_a, int_lst **lst_b, t_print status)
+int	ss(t_ps_lst	**lst_a, t_ps_lst **lst_b, t_print status)
 {
 	if (!lst_a || !lst_b || !*lst_a
 		|| !*lst_b || !(*lst_a)->next || !(*lst_b)->next)
@@ -25,7 +25,7 @@ int	ss(int_lst	**lst_a, int_lst **lst_b, t_print status)
 	return (1);
 }
 
-int	rr(int_lst	**lst_a, int_lst **lst_b, t_print status)
+int	rr(t_ps_lst	**lst_a, t_ps_lst **lst_b, t_print status)
 {
 	if (!lst_a || !lst_b || !*lst_a
 		|| !*lst_b || !(*lst_a)->next || !(*lst_b)->next)
@@ -38,7 +38,7 @@ int	rr(int_lst	**lst_a, int_lst **lst_b, t_print status)
 	return (1);
 }
 
-int	rrr(int_lst	**lst_a, int_lst **lst_b, t_print status)
+int	rrr(t_ps_lst	**lst_a, t_ps_lst **lst_b, t_print status)
 {
 	if (!lst_a || !lst_b || !*lst_a
 		|| !*lst_b || !(*lst_a)->next || !(*lst_b)->next)

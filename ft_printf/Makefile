@@ -6,7 +6,7 @@
 #    By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/28 17:51:53 by zkhojazo          #+#    #+#              #
-#    Updated: 2025/01/23 15:13:50 by zkhojazo         ###   ########.fr        #
+#    Updated: 2025/01/27 22:31:58 by zkhojazo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 LIBFTNAME = libft.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -fPIC
-LIBFTDIR = ./libft
+LIBFTDIR = ../libft
 LIBFT = $(LIBFTDIR)/libft.a
 
 SRCS = ft_printf.c \

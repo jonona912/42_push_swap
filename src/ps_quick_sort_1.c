@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 16:03:41 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 17:17:23 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:27:07 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	lst_part_b_helper(int_lst **st_a, int_lst **st_b, int len, int *len_a)
+int	lst_part_b_helper(t_ps_lst **st_a, t_ps_lst **st_b, int len, int *len_a)
 {
 	int	n_rotates;
 	int	median;
@@ -41,12 +41,12 @@ int	lst_part_b_helper(int_lst **st_a, int_lst **st_b, int len, int *len_a)
 	return (n_rotates);
 }
 
-int	lst_partition_b(int_lst **st_b, int_lst **st_a, int len)
+int	lst_partition_b(t_ps_lst **st_b, t_ps_lst **st_a, int len)
 {
-	int		i;
-	int		len_a;
-	int		n_rotates;
-	int_lst	*max_nd;
+	int			i;
+	int			len_a;
+	int			n_rotates;
+	t_ps_lst	*max_nd;
 
 	len_a = 0;
 	max_nd = find_max_beyond_len(*st_b, len);
@@ -64,7 +64,7 @@ int	lst_partition_b(int_lst **st_b, int_lst **st_a, int len)
 	return (len_a);
 }
 
-void	ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
+void	ps_qs_helper(t_ps_lst **st_a, t_ps_lst **st_b, int len, int is_a)
 {
 	int		len_a;
 	int		len_b;
@@ -79,7 +79,7 @@ void	ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
 	}
 	if (len < 4)
 	{
-		sort_both_stacks(st_a, st_b, len, is_a);
+		sort_b_stacks(st_a, st_b, len, is_a);
 		return ;
 	}
 	if (is_a == 1)
@@ -91,11 +91,10 @@ void	ps_qs_helper(int_lst **st_a, int_lst **st_b, int len, int is_a)
 	ps_qs_helper(st_a, st_b, len_b, 0);
 }
 
-int_lst	*ps_quick_sort(int_lst **st_a)
+t_ps_lst	*ps_quick_sort(t_ps_lst **st_a)
 {
-	int_lst	*st_b;
-	int		len;
-	// int		len_b;
+	t_ps_lst	*st_b;
+	int			len;
 
 	st_b = NULL;
 	if (!st_a)

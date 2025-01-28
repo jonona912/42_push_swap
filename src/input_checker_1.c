@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:16 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 16:56:29 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int	argv_valid(char *argv[], int argc)
 	return (1);
 }
 
-int	ft_is_dublicate(int_lst **st_a)
+int	ft_is_dublicate(t_ps_lst **st_a)
 {
-	int_lst	*dublicate;
-	int_lst	*lst;
+	t_ps_lst	*dublicate;
+	t_ps_lst	*lst;
 
 	lst = *st_a;
 	while (lst->next)

@@ -6,17 +6,17 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:12:38 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/26 16:12:27 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int_lst	*ps_lstnew(int val)
+t_ps_lst	*ps_lstnew(int val)
 {
-	int_lst	*ret;
+	t_ps_lst	*ret;
 
-	ret = (int_lst *)malloc(sizeof(int));
+	ret = (t_ps_lst *)malloc(sizeof(int));
 	if (!ret)
 		return (NULL);
 	ret->value = val;
@@ -24,16 +24,16 @@ int_lst	*ps_lstnew(int val)
 	return (ret);
 }
 
-int_lst	*ps_lst_last(int_lst *lst)
+t_ps_lst	*ps_lst_last(t_ps_lst *lst)
 {
 	while (lst && lst->next != NULL)
 		lst = lst->next;
 	return (lst);
 }
 
-void	ps_lst_add_back(int_lst **lst, int_lst *new)
+void	ps_lst_add_back(t_ps_lst **lst, t_ps_lst *new)
 {
-	int_lst	*temp;
+	t_ps_lst	*temp;
 
 	if (!*lst)
 		*lst = new;
@@ -44,7 +44,7 @@ void	ps_lst_add_back(int_lst **lst, int_lst *new)
 	}
 }
 
-void	ps_lst_add_front(int_lst **lst, int_lst *new)
+void	ps_lst_add_front(t_ps_lst **lst, t_ps_lst *new)
 {
 	if (!*lst)
 		*lst = new;
@@ -55,9 +55,9 @@ void	ps_lst_add_front(int_lst **lst, int_lst *new)
 	}
 }
 
-void	ps_lst_clear(int_lst **lst)
+void	ps_lst_clear(t_ps_lst **lst)
 {
-	int_lst	*nxt;
+	t_ps_lst	*nxt;
 
 	while (*lst)
 	{

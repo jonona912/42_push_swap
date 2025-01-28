@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 21:14:48 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 12:24:58 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len)
+int	sort_needed_asc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	if (len == 1)
 		return (0);
@@ -30,7 +30,7 @@ int	sort_needed_asc(int_lst **st_a, int_lst **st_b, int len)
 	return (1);
 }
 
-void	rev_rot_sor_helper(int_lst **st_a, int_lst **st_b)
+void	rev_rot_sor_helper(t_ps_lst **st_a, t_ps_lst **st_b)
 {
 	if (is_stack_b_rot(*st_b))
 		rrr(st_a, st_b, PRINT);
@@ -38,7 +38,7 @@ void	rev_rot_sor_helper(int_lst **st_a, int_lst **st_b)
 		rev_rotate_x(st_a, 'a', PRINT);
 }
 
-int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len)
+t_ps_lst	*sort_3_null_asc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int		ft;
 	int		sd;
@@ -66,7 +66,7 @@ int_lst	*sort_3_null_asc(int_lst **st_a, int_lst **st_b, int len)
 	return (*st_a);
 }
 
-int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
+t_ps_lst	*sort_3_asc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int		ft;
 	int		sd;
@@ -95,7 +95,7 @@ int_lst	*sort_3_asc(int_lst **st_a, int_lst **st_b, int len)
 	return (*st_a);
 }
 
-int_lst	*sort_asc(int_lst **st_a, int_lst **st_b, int len)
+t_ps_lst	*sort_asc(t_ps_lst **st_a, t_ps_lst **st_b, int len)
 {
 	int		lst_len;
 

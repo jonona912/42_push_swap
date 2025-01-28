@@ -3,21 +3,26 @@ SRC_DIR = src
 OBJ_DIR = obj
 FT_PRINTF_DIR = ft_printf
 GNL_DIR = src_bonus/gnl
+LIBFT_DIR = libft
 SRC_DIR_BONUS = src_bonus
 OBJ_DIR_BONUS = obj_bonus
 
+LIBFT = $(LIBFTDIR)/libft.a
+FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
+GNL = $(GNL_DIR)/libgnl.a
+
 # Libraries
 LIBS = -L $(FT_PRINTF_DIR) -lftprintf
-LIBS_BONUS = -L $(FT_PRINTF_DIR) -lftprintf -L $(GNL_DIR) -lgnl
+LIBS_BONUS = -L $(FT_PRINTF_DIR) -lftprintf -L $(GNL_DIR) -lgnl -L $(LIBFT_DIR) -lft
 
-# Output
-OUTPUT = push_swap
-OUTPUT_BONUS = push_swap_bonus
+# NAME
+NAME = push_swap
+NAME_BONUS = checker
 
 # Compiler and Flags
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I include -I $(FT_PRINTF_DIR) -I $(GNL_DIR)
+CFLAGS = -Wall -Wextra -Werror -fPIC
+INCLUDES = -I include -I $(FT_PRINTF_DIR) -I $(GNL_DIR) -I $(LIBFT_DIR)
 
 # Source Files
 SRCS = input_checker_1.c \
@@ -67,16 +72,25 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 OBJS_BONUS = $(addprefix $(OBJ_DIR_BONUS)/, $(SRCS_BONUS:.c=.o))
 
 # Rules
-all: $(OUTPUT)
+all: $(NAME)
 
-bonus: $(OUTPUT_BONUS)
+bonus: $(NAME_BONUS)
 	
 
-$(OUTPUT): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(OUTPUT)
+$(NAME): $(OBJS) $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
 
-$(OUTPUT_BONUS): $(OBJS_BONUS)
-	$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBS_BONUS) -o $(OUTPUT_BONUS)
+$(NAME_BONUS): $(OBJS_BONUS) $(LIBFT) $(FT_PRINTF) $(GNL)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBS_BONUS) -o $(NAME_BONUS)
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(FT_PRINTF):
+	$(MAKE) -C $(FT_PRINTF_DIR)
+
+$(GNL):
+	$(MAKE) -C $(GNL_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -88,9 +102,15 @@ $(OBJ_DIR_BONUS)/%.o: $(SRC_DIR_BONUS)/%.c
 
 clean:
 	rm -rf $(OBJ_DIR) $(OBJ_DIR_BONUS)
+	cd $(LIBFT_DIR) && $(MAKE) clean
+	cd $(GNL_DIR) && $(MAKE) clean
+	cd $(FT_PRINTF_DIR) && $(MAKE) clean
 
 fclean: clean
-	rm -f $(OUTPUT) $(OUTPUT_BONUS)
+	rm -f $(NAME) $(NAME_BONUS)
+	cd $(LIBFT_DIR) && $(MAKE) fclean
+	cd $(GNL_DIR) && $(MAKE) fclean
+	cd $(FT_PRINTF_DIR) && $(MAKE) fclean
 
 re: fclean all
 
@@ -137,8 +157,8 @@ re: fclean all
 # # Libraries
 # LIBS_BONUS = -L $(FT_PRINTF_DIR) -lftprintf -L $(GNL_DIR) -lgnl
 
-# # Output
-# OUTPUT = push_swap_bonus
+# # NAME
+# NAME = push_swap_bonus
 # SRCS = input_checker_1.c \
 # 		input_checker_2.c \
 # 		lists_1.c \
@@ -189,8 +209,8 @@ re: fclean all
 # OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
 
 # # Build the executable
-# $(OUTPUT): $(OBJS_BONUS) $(OBJS)
-# 	$(CC) $(CFLAGS) $(OBJS_BONUS) $(OBJS) -o $(OUTPUT) $(LIBS_BONUS)
+# $(NAME): $(OBJS_BONUS) $(OBJS)
+# 	$(CC) $(CFLAGS) $(OBJS_BONUS) $(OBJS) -o $(NAME) $(LIBS_BONUS)
 
 # # Compile source files into object files
 # $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -203,10 +223,10 @@ re: fclean all
 
 # # Clean everything
 # fclean: clean
-# 	rm -f $(OUTPUT)
+# 	rm -f $(NAME)
 
 # # Rebuild
-# re: fclean $(OUTPUT)
+# re: fclean $(NAME)
 
 # .PHONY: all clean fclean re
 
@@ -270,7 +290,7 @@ re: fclean all
 # # Object files
 # OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
 
-# # Output executable
+# # NAME executable
 # NAME = push_swap
 # # Libraries to link
 # LIBS = -L$(LIB_DIR) -lftprintf
@@ -337,7 +357,7 @@ re: fclean all
 # # Object files (corresponding .o files for each .c file)
 # OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
 
-# # Output executable
+# # NAME executable
 # NAME = push_swap
 
 # # Library to link against (example: libm.a or libother.a in the lib directory)

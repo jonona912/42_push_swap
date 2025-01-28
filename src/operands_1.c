@@ -6,15 +6,15 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 15:12:31 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/15 21:02:56 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int_lst	*find_penultimate(int_lst *lst)
+t_ps_lst	*find_penultimate(t_ps_lst *lst)
 {
-	int_lst	*prev;
+	t_ps_lst	*prev;
 
 	if (!lst || !lst->next)
 		return (NULL);
@@ -26,9 +26,9 @@ int_lst	*find_penultimate(int_lst *lst)
 	return (prev);
 }
 
-int_lst	*rev_rotate_x(int_lst **lst, char x, t_print status)
+t_ps_lst	*rev_rotate_x(t_ps_lst **lst, char x, t_print status)
 {
-	int_lst	*penultimate;
+	t_ps_lst	*penultimate;
 
 	if (!lst)
 		return (NULL);
@@ -43,10 +43,10 @@ int_lst	*rev_rotate_x(int_lst **lst, char x, t_print status)
 	return (*lst);
 }
 
-int_lst	*rotate_x(int_lst **lst, char x, t_print status)
+t_ps_lst	*rotate_x(t_ps_lst **lst, char x, t_print status)
 {
-	int_lst	*penultimate;
-	int_lst	*new_head;
+	t_ps_lst	*penultimate;
+	t_ps_lst	*new_head;
 
 	if (!lst)
 		return (NULL);
@@ -62,9 +62,9 @@ int_lst	*rotate_x(int_lst **lst, char x, t_print status)
 	return (*lst);
 }
 
-int	push_x(int_lst **st_x, int_lst **st_y, char x, t_print status)
+int	push_x(t_ps_lst **st_x, t_ps_lst **st_y, char x, t_print status)
 {
-	int_lst	*first_node;
+	t_ps_lst	*first_node;
 
 	if (!*st_x)
 		return (0);
@@ -77,9 +77,9 @@ int	push_x(int_lst **st_x, int_lst **st_y, char x, t_print status)
 	return (1);
 }
 
-int_lst	*swap_x(int_lst	**lst, char x, t_print status)
+t_ps_lst	*swap_x(t_ps_lst	**lst, char x, t_print status)
 {
-	int_lst	*temp_head;
+	t_ps_lst	*temp_head;
 
 	if (!lst)
 		return (NULL);

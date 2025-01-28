@@ -6,7 +6,7 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:07:31 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 19:04:35 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:31:57 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int	check_no_output(void)
 	}
 }
 
-int_lst	*check_for_error(int argc, char *argv[])
+t_ps_lst	*check_for_error(int argc, char *argv[])
 {
-	int_lst	*st_a;
+	t_ps_lst	*st_a;
 
 	st_a = NULL;
 	if (!argv_valid_bonus(argv, argc))

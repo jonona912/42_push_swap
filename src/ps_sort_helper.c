@@ -6,13 +6,13 @@
 /*   By: zkhojazo <zkhojazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:47:29 by zkhojazo          #+#    #+#             */
-/*   Updated: 2025/01/27 12:14:18 by zkhojazo         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:15:32 by zkhojazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	double_swapped(int_lst **st_a, int_lst **st_b)
+int	double_swapped(t_ps_lst **st_a, t_ps_lst **st_b)
 {
 	int	a1;
 	int	a2;
@@ -34,7 +34,7 @@ int	double_swapped(int_lst **st_a, int_lst **st_b)
 	return (0);
 }
 
-int	set_nums(int_lst *lst, int len, int *sd, int *td)
+int	set_nums(t_ps_lst *lst, int len, int *sd, int *td)
 {
 	if (!lst)
 		return (0);
