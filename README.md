@@ -1,5 +1,70 @@
-# push_swap
+# 42_push_swap
 Push Swap - Project at 42 school (42 Wolfsburg)
+
+<h1 align="center">
+	♻️ push_swap
+</h1>
+
+<p align="center">
+	<b><i>Sorting data on a stack with a limited set of operations</i></b><br>
+</p>
+
+<h3 align="center">
+	<a href="#%EF%B8%8F-about">About</a>
+	<span> · </span>
+	<a href="#%EF%B8%8F-usage">Usage</a>
+	<span> · </span>
+	<a href="#-What-I-Learned">What I Learned</a>
+</h3>
+
+---
+
+## 💡 About the project
+
+> _One of my most favorite projects, push_swap is an algorithmic project where the goal is to sort a stack of integers with the smallest possible number of moves, using only a limited set of stack operations. The challenge is to optimize algorithms and data structures to achieve efficient sorting under strict constraints, deepening your understanding of algorithmic problem-solving and resource management._
+
+For more detailed information, look at the [**subject of this project**](https://github.com/jonona912/42_push_swap/blob/main/push_swap_subject.pdf).
+
+## 🛠️ Usage
+
+### Requirements
+
+The project is implemented in C and requires the **`gcc` compiler** and standard **C libraries** to run.
+
+### Instructions
+
+**1. Compiling the project**
+
+To compile, navigate to the project directory and run:
+
+```shell
+$ make
+```
+
+**2. Running the program**
+
+To run the program and sort a list of integers, use:
+
+```shell
+$ ./push_swap [list of integers]
+```
+
+Example:
+
+```shell
+$ ./push_swap 3 2 1
+```
+
+## 📚 What I Learned
+
+- Stack-based algorithms. Gained deeper understanding of sorting algorithms, especially Quick Sort and Merge Sort, both with arrays and linked lists
+- Sorting techniques and optimization. Learned to modify standard algorithms to fit the specific requirements of the push_swap project
+- Enhanced ability to visualize algorithms abstractly—solving problems on paper or in my head before coding
+- Handling edge cases and input validation
+- Improving problem-solving and debugging skills especially via GDB debugger
+
+
+## 📝 Draft of what I felt right after completing the project
 
 Objective is to come up with an algorithm that finds efficient number of operands on a stack to order numbers in an ascending order given one aditional stack. The operands are push from stack x to y, swap top to numbers of stack a or b, rotate or revese rotate stacks or operations where both stacks undergo same operation.
 
