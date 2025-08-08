@@ -1,6 +1,8 @@
 # 42_push_swap
 Push Swap - Project at 42 school (42 Wolfsburg)
 
+![Bonus Completed](https://img.shields.io/badge/bonus-completed-brightgreen)
+
 <h1 align="center">
 	♻️ push_swap
 </h1>
@@ -22,6 +24,8 @@ Push Swap - Project at 42 school (42 Wolfsburg)
 ## 💡 About the project
 
 > _One of my most favorite projects, push_swap is an algorithmic project where the goal is to sort a stack of integers with the smallest possible number of moves, using only a limited set of stack operations. The challenge is to optimize algorithms and data structures to achieve efficient sorting under strict constraints, deepening your understanding of algorithmic problem-solving and resource management._
+#### 🚀 Bonus
+- [x] Checker program implemented
 
 For more detailed information, look at the [**subject of this project**](https://github.com/jonona912/42_push_swap/blob/main/push_swap_subject.pdf).
 
@@ -49,11 +53,35 @@ To run the program and sort a list of integers, use:
 $ ./push_swap [list of integers]
 ```
 
-Example:
+**Example:**
 
 ```shell
 $ ./push_swap 3 2 1
 ```
+
+### 🚀 Bonus
+
+The bonus part of this project typically includes an additional checker program (usually called `checker`) that verifies if a series of instructions correctly sorts the stack.
+
+**Compiling the bonus:**
+
+```shell
+$ make bonus
+```
+
+**Running the bonus checker:**
+
+1. Generate instructions with `push_swap` and pipe them to `checker`:
+
+    ```shell
+    $ ./push_swap 3 2 1 | ./checker 3 2 1
+    ```
+
+2. `checker` will output `OK` if the stack is sorted or `KO` if not.
+
+**Note:**  
+Other bonus features may include support for additional commands or improved input handling. Please refer to the project subject or the repository's bonus files for further details.
+
 
 ## 📚 What I Learned
 
